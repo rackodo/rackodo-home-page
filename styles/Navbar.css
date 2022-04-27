@@ -1,9 +1,8 @@
 /* Style a navbar with a navbar, navbar-container, navbar-logo and navbar-links classes */
 
 .navbar {
-	background-color: rgba(0, 0, 0, 0.25);
 	position: fixed;
-	backdrop-filter: blur(15px);
+	backdrop-filter: blur(5px);
 	top: 0;
 	padding: 0px;
 	margin: 0px;
@@ -11,6 +10,8 @@
 	z-index: 1;
 	border-bottom-left-radius: 25px;
 	border-bottom-right-radius: 25px;
+
+	box-shadow: 0px 5px 50px white;
 }
 
 .navbar-container {
@@ -55,12 +56,13 @@
 .navbar-links a {
 	display: inline-block;
 	color: #fff;
-	font-size: 14px;
+	font-size: 28px;
 	font-weight: bold;
 	text-decoration: none;
-	padding: 20px 30px;
+	width: 70px;
+	padding: 10px 14px;
 	margin: 0px 5px;
-	border-radius: 30px;
+	border-radius: 100px;
 	border: 5px solid rgba(255,255,255,0.25);
 	position: relative;
 
@@ -80,7 +82,7 @@
 	font-weight: bold;
 	text-decoration: none;
 	margin: auto;
-	border-radius: 30px;
+	border-radius: 100px;
 	position: absolute;
 	background-color: rgba(255,255,255,0.25);
 	width: 0px;
@@ -100,7 +102,7 @@
 
 .navbar-links a:hover:after {
 	padding: 20px 30px;
-	width: calc(100% + 10px);
+	width: 70px;
 	height: calc(100% + 10px);
 }
 
