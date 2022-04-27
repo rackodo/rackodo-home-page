@@ -3,6 +3,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Script from 'next/script'
+import Image from 'next/image'
 
 const Navbar = () => {
   return (
@@ -12,7 +13,7 @@ const Navbar = () => {
         <div className="navbar-logo">
           <Link href="/">
             <a>
-              <img
+              <Image
                 className="navbar-logo-image"
                 src="/images/logo.png"
                 alt="Logo"
@@ -22,13 +23,13 @@ const Navbar = () => {
         </div>
         <div className="navbar-links">
           <Link href="https://www.youtube.com/channel/UChiRebGN9a1oSoG_QZj6LjQ">
-            <a><i class="cp cp-youtube"></i></a>
+            <a><i className="cp cp-youtube"></i></a>
           </Link>
           <Link href="https://github.com/raccter">
-            <a><i class="cp cp-github-o"></i></a>
+            <a><i className="cp cp-github-o"></i></a>
           </Link>
           <Link href="https://www.instagram.com/bash_elliott/">
-            <a><i class="cp cp-instagram-o"></i></a>
+            <a><i className="cp cp-instagram-o"></i></a>
           </Link>
         </div>
       </div>

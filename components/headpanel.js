@@ -7,7 +7,9 @@ const HeadPanel = () => {
         <div className="headpanel" style={styling}>
             <div className="headpanel-container">
                 <div className="disc">
-                    <img src="/images/slide.JPG" />
+                    <Image 
+                    src="/images/slide.JPG"
+                    alt="Background" />
                 </div>
                 <div className="text">
                     <h1>Bash Elliott</h1>
