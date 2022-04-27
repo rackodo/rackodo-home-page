@@ -3,9 +3,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-const Navbar = () => {
+const Navbar = ({mode}) => {
   return (
-    <div className="navbar">
+    <div className="navbar ${mode}">
       <div className="navbar-container">
         <div className="navbar-logo">
           <Link href="/">
@@ -23,7 +23,7 @@ const Navbar = () => {
             <a>My Works</a>
           </Link>
           <Link href="/about">
-            <a>About me</a>
+            <a>About Me</a>
           </Link>
           <Link href="/contact">
             <a>Contact Info</a>

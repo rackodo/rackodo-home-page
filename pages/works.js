@@ -5,6 +5,11 @@ import Navbar from '../components/navbar'
 
 export default function Works() {
     return(
-        <Navbar />
+        <div>
+            <Head>
+                <title>My Works</title>
+            </Head>
+            <Navbar />
+        </div>
     )
 }
