@@ -13,7 +13,6 @@
     position: absolute;
     display: flex;
     padding: 0 100px;
-    border: 5px black solid;
     width: 100vw;
     height: 100vh;
     justify-content: space-between;
@@ -21,7 +20,8 @@
 }
 
 .headpanel-container .text {
-    margin: 50px;
+    margin: 0px 50px;
+    flex: 600px;
 }
 
 .headpanel-container .text h3 {
@@ -91,8 +91,9 @@
 }
 
 .headpanel-container .disc img {
-    width: 500px;
-    height: 500px;
+    width: 100%;
+    height: auto;
+    min-width: 150px;
 
     border-radius: 100%;
 
@@ -100,4 +101,26 @@
     animation-duration: 60s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+}
+
+.headpanel-container .disc {
+    margin: auto;
+}
+
+/* For mobile screens */
+@media screen and (max-width: 1000px) {
+    .headpanel-container {
+        flex-wrap: wrap;
+        padding: 0px 15px;
+        overflow-x: hidden;
+    }
+
+    .headpanel-container .disc img {
+        width: 70%;
+        display: block;
+        height: auto;
+        margin: auto;
+        min-width: 350px;
+        margin-top: 125px;
+    }
 }

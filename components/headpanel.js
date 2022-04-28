@@ -9,7 +9,11 @@ const HeadPanel = () => {
                 <div className="disc">
                     <Image 
                     src="/images/slide.JPG"
-                    alt="Background" />
+                    alt="Disc" 
+                    width={500}
+                    height={500}
+                    layout="raw" 
+                    />
                 </div>
                 <div className="text">
                     <h1>Bash Elliott</h1>

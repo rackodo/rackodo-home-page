@@ -17,6 +17,9 @@ const Navbar = () => {
                 className="navbar-logo-image"
                 src="/images/logo.png"
                 alt="Logo"
+                width={70}
+                height={70}
+                layout="raw"
               />
             </a>
           </Link>
