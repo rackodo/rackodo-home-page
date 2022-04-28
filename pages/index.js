@@ -6,6 +6,7 @@ export default function Home() {
   return (
     <div>
       <Navbar />
+      <HeadInfo title="Bash Elliott"/>
       <HeadPanel />
     </div>
   )
