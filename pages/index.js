@@ -1,16 +1,17 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
 import Navbar from '../components/navbar'
 import HeadPanel from '../components/headpanel'
 import HeadInfo from '../components/headinfo'
+import Info from '../components/info'
+import Footer from '../components/footer'
 
 export default function Home() {
   return (
     <div>
-      <HeadInfo title="Bash Elliott" />
+      <Navbar />
+      <HeadInfo title="Bash Elliott"/>
       <HeadPanel />
-      <Navbar/>
+      <Info />
+      <Footer />
     </div>
   )
 }

@@ -1,0 +1,49 @@
+.infoContainer {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.infoLeft {
+    background-image: url("../public/images/station.JPG");
+    background-size: cover;
+    background-position: center center;
+    flex: 40%;
+    display: block;
+    min-height: 60vh;
+}
+
+.infoRight {
+    background-color: white;
+    color: black;
+    flex: 60%;
+    display: flex;
+    min-height: 60vh;
+    align-items: center;
+    justify-items: center;
+}
+
+.infoRightContainer {
+    padding: 20px 50px;
+    position: relative;
+}
+
+@media screen and (max-width: 800px) {
+    .infoContainer {
+        display: block;
+    }
+
+    .infoLeft, .infoRight {
+        width: 100%;
+        display: block;
+    }
+
+    .infoLeft {
+        min-height: 50vh;
+    }
+
+    .infoRight {
+        min-height: unset;
+    }
+}
