@@ -115,12 +115,18 @@
         overflow-x: hidden;
     }
 
+    .headpanel-container .text {
+        flex: 100%;
+        margin: 0px 20px;
+    }
+
     .headpanel-container .disc img {
         width: 70%;
         display: block;
         height: auto;
         margin: auto;
         min-width: 350px;
+        margin-bottom: 25px;
         margin-top: 125px;
     }
 }
