@@ -69,3 +69,15 @@
 .navbar-links a:hover {
 	border-color: rgba(255,255,255,0);
 }
+
+@media screen and (max-width: 600px) {
+	.navbar-links {
+		flex: auto;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.navbar-links .cell {
+		padding: 5px;
+	}
+}

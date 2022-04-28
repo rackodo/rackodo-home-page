@@ -29,3 +29,9 @@
 .navbar-container:hover {
 	height: 150px;
 }
+
+@media screen and (max-width: 800px) {
+	.navbar-container {
+		height: 75px;
+	}
+}

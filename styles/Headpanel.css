@@ -86,7 +86,7 @@
 }
 
 .headpanel-container .disc img {
-    width: 100%;
+    width: 70%;
     height: auto;
     min-width: 150px;
 
@@ -103,7 +103,7 @@
 }
 
 /* For mobile screens */
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 700px) {
     .headpanel-container {
         flex-wrap: wrap;
         padding: 0px 15px;
@@ -124,6 +124,9 @@
         height: auto;
         margin: auto;
         min-width: 350px;
+    }
+    
+    .headpanel-container .disc {
         margin-bottom: 25px;
         margin-top: 125px;
     }
