@@ -34,4 +34,8 @@
 	.navbar-container {
 		height: 75px;
 	}
+
+	.navbar-container:hover {
+		height: 75px;
+	}
 }

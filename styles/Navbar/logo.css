@@ -13,7 +13,12 @@
 
 .navbar-container:hover .navbar-logo-image {
 	transform: rotate(30deg);
-	height: 125px;
+}
+
+@media screen and (min-width: 800px) {
+	.navbar-container:hover .navbar-logo-image {
+		height: 125px;
+	}
 }
 
 @media screen and (max-width: 800px) {
