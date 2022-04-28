@@ -5,9 +5,8 @@ import HeadInfo from '../components/headinfo'
 export default function Home() {
   return (
     <div>
-      <HeadInfo title="Bash Elliott" />
-      <HeadPanel />
       <Navbar />
+      <HeadPanel />
     </div>
   )
 }

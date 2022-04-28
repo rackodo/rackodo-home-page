@@ -1,133 +1,19 @@
 .headpanel {
     margin: 0;
     padding: 0;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(#FFF, #000);
 }
 
 .headpanel-container {
-    position: absolute;
-    display: flex;
-    padding: 0 100px;
-    width: 100vw;
-    height: 100vh;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.headpanel-container .text {
-    margin: 0px 50px;
-    flex: 600px;
-}
-
-.headpanel-container .text h3 {
-    padding-bottom: 20px;
-    border-bottom: 1px solid white;
-}
-
-.headpanel-container .text h1, h3 {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 20px;
+    color: white;
     text-align: center;
-    color: white;
-}
 
-.headpanel-container .text p {
-    color: white;
-    padding: 0px 25px;
-    text-align: justify;
-}
- 
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes rainbow-bg{
-    100%,0%{
-        box-shadow: 0px 0px 50px rgb(255,0,0);
-    }
-    8%{
-        box-shadow: 0px 0px 50px rgb(255,127,0);
-    }
-    16%{
-        box-shadow: 0px 0px 50px rgb(255,255,0);
-    }
-    25%{
-        box-shadow: 0px 0px 50px rgb(127,255,0);
-    }
-    33%{
-        box-shadow: 0px 0px 50px rgb(0,255,0);
-    }
-    41%{
-        box-shadow: 0px 0px 50px rgb(0,255,127);
-    }
-    50%{
-        box-shadow: 0px 0px 50px rgb(0,255,255);
-    }
-    58%{
-        box-shadow: 0px 0px 50px rgb(0,127,255);
-    }
-    66%{
-        box-shadow: 0px 0px 50px rgb(0,0,255);
-    }
-    75%{
-        box-shadow: 0px 0px 50px rgb(127,0,255);
-    }
-    83%{
-        box-shadow: 0px 0px 50px rgb(255,0,255);
-    }
-    91%{
-        box-shadow: 0px 0px 50px rgb(255,0,127);
-    }
-}
-
-.headpanel-container .disc img {
-    width: 70%;
-    height: auto;
-    min-width: 150px;
-
-    border-radius: 100%;
-
-    animation-name: spin, rainbow-bg;
-    animation-duration: 60s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-}
-
-.headpanel-container .disc {
-    margin: auto;
-}
-
-/* For mobile screens */
-@media screen and (max-width: 700px) {
-    .headpanel-container {
-        flex-wrap: wrap;
-        padding: 0px 15px;
-        overflow-x: hidden;
-    }
-
-    .headpanel-container .text, .disc {
-        flex: 100%;
-    }
-    
-    .headpanel-container .text {
-        margin: 0px 20px;
-    }
-    
-    .headpanel-container .disc img {
-        width: 70%;
-        display: block;
-        height: auto;
-        margin: auto;
-        min-width: 350px;
-    }
-    
-    .headpanel-container .disc {
-        margin-bottom: 25px;
-        margin-top: 125px;
-    }
+    border: 10px rgba(255,255,255,0.25) solid;
 }

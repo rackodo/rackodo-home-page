@@ -13,7 +13,7 @@
 	display: table-cell;
 	margin: 0px;
 	text-align: center;
-	padding: 10px 5px;
+	padding: 5px;
 	margin: 0;
 }
 
@@ -24,7 +24,6 @@
 	font-weight: bold;
 	text-decoration: none;
 	width: 70px;
-	/* padding: 10px 50px; */
 	position: relative;
 	box-sizing: border-box;
 
@@ -61,23 +60,10 @@
 }
 
 .navbar-links a:hover:after {
-	padding: 20px 30px;
 	width: 100%;
-	height: calc(100% + 10px);
+	height: calc(100%)
 }
 
 .navbar-links a:hover {
 	border-color: rgba(255,255,255,0);
-}
-
-@media screen and (max-width: 600px) {
-	.navbar-links {
-		flex: auto;
-	}
-}
-
-@media screen and (max-width: 800px) {
-	.navbar-links .cell {
-		padding: 5px;
-	}
 }
