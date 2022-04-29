@@ -5,6 +5,11 @@ const nextConfig = {
     images: {
       layoutRaw: true
     }
+  },
+  images: {
+    domains: [
+      'via.placeholder.com'
+    ]
   }
 }
 
