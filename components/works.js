@@ -11,8 +11,8 @@ const Works = ({title, children}) => {
 
     return (
         <div>
-            <div className="worksHeader">
-                <h1>{title}</h1>
+            <div className="worksHeader" ref={containerRef}>
+                <h1 className={isVisible ? 'headerVisible' : 'headerNotVisible'}>{title}</h1>
             </div>
             <div className="works">
                 {children}
@@ -22,11 +22,17 @@ const Works = ({title, children}) => {
 }
 
 export const WorksItem = ({title, href, image, children}) => {
+    const [ containerRef, isVisible ] = ScrollScript({
+        root: null,
+        rootMargin: "0px",
+        threshold: 0
+    })
+
     return (
-        <div className="worksItem">
+        <div className={`worksItem ${isVisible ? 'worksItemVisible' : 'worksItemNotVisible'}`} ref={containerRef}>
             <div className="worksTop">
                 <Link href={href}><a href={href}>
-                    <div className="worksImageWrapper">
+                    <div className={`worksImageWrapper`}>
                         <Image
                         src={image ? image : "/images/project-logos/unknown.png"}
                         alt={title}

@@ -1,4 +1,4 @@
-@keyframes expand {
+@keyframes infoExpand {
     0% {
         width: 0%;
     }
@@ -9,14 +9,14 @@
 }
 
 .headingVisible::after {
-    animation: expand 1s;
+    animation: infoExpand 1s;
 }
 
 .headingNotVisible::after {
     animation-play-state: paused !important;
 }
 
-@keyframes fadeIn {
+@keyframes infoFadeIn {
     0% {
         opacity: 0;
     }
@@ -27,7 +27,7 @@
 }
 
 .infoVisible {
-    animation: fadeIn 1s;
+    animation: infoFadeIn 1s;
     opacity: 1;
 }
 

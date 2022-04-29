@@ -1,0 +1,55 @@
+@keyframes worksExpand {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 50%;
+    }
+}
+
+.headerVisible::after {
+    animation: worksExpand 1s;
+}
+
+.headerNotVisible::after {
+    animation-play-state: paused !important;
+}
+
+@keyframes worksImageEnter {
+    0% {
+        transform: translateY(50px);
+        opacity: 0.1;
+    }
+    
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes worksItemFadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.worksItemVisible .worksImageWrapper img {
+    animation: worksImageEnter 1s;
+}
+
+.worksItemNotVisible .worksImageWrapper img {
+    animation-play-state: paused !important;
+}
+
+.worksItemVisible .worksTop h1, .worksItemVisible .worksBottom p {
+    animation: worksItemFadeIn 1s;
+}
+
+.worksItemNotVisible .worksTop h1, .worksItemNotVisible .worksBottom p {
+    animation-play-state: paused !important;
+}

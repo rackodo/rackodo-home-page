@@ -1,4 +1,4 @@
-@keyframes visible {
+@keyframes headpanelFadeIn {
     0% {
         opacity: 0%;
     }
@@ -9,14 +9,14 @@
 }
 
 .panelVisible {
-    animation: visible 1s;
+    animation: headpanelFadeIn 1s;
 }
 
 .panelNotVisible {
     animation-play-state: paused !important;
 }
 
-@keyframes expand {
+@keyframes headpanelExpand {
     0% {
         width: 0%;
     }
@@ -27,7 +27,7 @@
 }
 
 .panelVisible h1::after {
-    animation: expand 1s;
+    animation: headpanelExpand 1s;
 }
 
 .panelNotVisible h1::after {
