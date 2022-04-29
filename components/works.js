@@ -21,10 +21,10 @@ export const WorksItem = ({title, href, image, children}) => {
                 <Link href={href}><a href={href}>
                     <div className="worksImageWrapper">
                         <Image
-                        src={image ? image : 'https://via.placeholder.com/150x150'}
+                        src={image ? image : "/images/project-logos/unknown.png"}
                         alt={title}
-                        width={150}
-                        height={150}
+                        width={250}
+                        height={250}
                         layout="raw" />
                     </div>
                     <h1>{title}</h1>

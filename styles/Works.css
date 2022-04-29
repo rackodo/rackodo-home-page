@@ -28,14 +28,14 @@
 .worksTop .worksImageWrapper {
     display: block;
     flex: 100%;
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 200px;
     margin: auto;
 }
 
 .worksTop .worksImageWrapper img {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
 }
 
 .worksTop h1, .worksBottom p {

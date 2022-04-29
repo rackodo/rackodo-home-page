@@ -15,6 +15,7 @@ export default function Home() {
 			<Info />
 			<Works title="What I've done">
 				<WorksItem
+				image="/images/project-logos/Bashbox.png"
 				title="Bashbox"
 				href="https://github.com/raccter/bashbox">
 					<p>
@@ -22,6 +23,7 @@ export default function Home() {
 					</p>
 				</WorksItem>
 				<WorksItem
+				image="/images/project-logos/Bashtable.png"
 				title="Bashtable"
 				href="https://github.com/raccter/bashtable">
 					<p>
@@ -29,6 +31,7 @@ export default function Home() {
 					</p>
 				</WorksItem>
 				<WorksItem
+				image="/images/project-logos/json-gradient-maker.png"
 				title="Json Gradient Maker"
 				href="https://github.com/raccter/gradient-json-minecraft">
 					<p>
