@@ -1,7 +1,15 @@
+import ScrollScript from './scrollscript'
+
 const Skills = () => {
+	const [ containerRef, isVisible ] = ScrollScript({
+        root: null,
+        rootMargin: "0px",
+        threshold: 0
+    })
+
 	return (
-		<div className="skills">
-			<h1>My Skills</h1>
+		<div className="skills" ref={containerRef}>
+			<h1 className={isVisible ? 'skillsVisible' : 'skillsNotVisible'}>My Skills</h1>
 			<SkillList title="Coding">
 				<p>
 					9 years of experience - Personal Projects
@@ -65,8 +73,13 @@ const Skills = () => {
 }
 
 const SkillList = ({title, children}) => {
+	const [ containerRef, isVisible ] = ScrollScript({
+        root: null,
+        rootMargin: "0px",
+        threshold: 0
+    })
 	return (
-		<div className="skillList">
+		<div ref={containerRef} className={`skillList ${isVisible ? 'skillListVisible' : 'skillListNotVisible'}`}>
 			<h2>
 				{title}
 			</h2>
