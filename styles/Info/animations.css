@@ -14,10 +14,12 @@
 
 .headingNotVisible::after {
     animation-play-state: paused !important;
+    width: 0% !important;
 }
 
 @keyframes infoFadeIn {
     0% {
+        transform: translateX(-15px);
         opacity: 0;
     }
 
@@ -34,4 +36,5 @@
 .infoNotVisible {
     animation-play-state: paused !important;
     opacity: 0;
+    transform: translateX(-15px);
 }
