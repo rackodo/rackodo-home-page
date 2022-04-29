@@ -3,6 +3,7 @@ import HeadPanel from '../components/headpanel'
 import HeadInfo from '../components/headinfo'
 import Info from '../components/info'
 import Works, {WorksItem} from '../components/works'
+import Skills from '../components/skills'
 import Footer from '../components/footer'
 
 export default function Home() {
@@ -42,6 +43,7 @@ export default function Home() {
 					<p>Nothing in the works right now...</p>
 				</WorksItem>
 			</Works>
+			<Skills />
 			<Footer />
 		</div>
 	)
