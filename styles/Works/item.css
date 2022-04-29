@@ -1,0 +1,16 @@
+.worksItem {
+    flex: 25%;
+    min-width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 25px;
+    overflow: hidden;
+}
+
+.worksItem:nth-child(even) {
+    background-color: #111;
+}
+
+.worksItem:nth-child(odd) {
+    background-color: #222;
+}

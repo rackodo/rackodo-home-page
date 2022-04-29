@@ -1,0 +1,13 @@
+.worksImageWrapper {
+    display: block;
+    flex: 100%;
+    width: 150px;
+    height: 200px;
+    margin: auto;
+}
+
+.worksImageWrapper img {
+    width: 150px;
+    height: 150px;
+}
+

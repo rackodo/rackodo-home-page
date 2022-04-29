@@ -1,7 +1,14 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import ScrollScript from './scrollscript'
 
 const Works = ({title, children}) => {
+    const [ containerRef, isVisible ] = ScrollScript({
+        root: null,
+        rootMargin: "0px",
+        threshold: 0
+    })
+
     return (
         <div>
             <div className="worksHeader">

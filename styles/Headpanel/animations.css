@@ -1,0 +1,35 @@
+@keyframes visible {
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
+
+.panelVisible {
+    animation: visible 1s;
+}
+
+.panelNotVisible {
+    animation-play-state: paused !important;
+}
+
+@keyframes expand {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+.panelVisible h1::after {
+    animation: expand 1s;
+}
+
+.panelNotVisible h1::after {
+    animation-play-state: paused !important;
+}

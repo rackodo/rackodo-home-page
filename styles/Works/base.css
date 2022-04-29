@@ -1,0 +1,10 @@
+.works {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: top;
+}
+
+.worksTop h1, .worksBottom p {
+    color: white;
+}
+

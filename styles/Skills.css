@@ -1,18 +1,1 @@
-.skills {
-    display: block;
-    padding: 20px 50px;
-    background-color: #DFDFDF;
-}
-
-.skills h1 {
-    font-size: 2em;
-}
-
-.skillExperience {
-    font-weight: bold;
-}
-
-.skillList ul {
-    padding: 0;
-    list-style-type: none;
-}
+@import 'Skills/base.css'
