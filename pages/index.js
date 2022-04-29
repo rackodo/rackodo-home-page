@@ -35,6 +35,13 @@ export default function Home() {
 					</p>
 				</WorksItem>
 			</Works>
+			<Works title="What I'm doing">
+				<WorksItem
+				title="N/A"
+				href="https://github.com/raccter">
+					<p>Nothing in the works right now...</p>
+				</WorksItem>
+			</Works>
 			<Footer />
 		</div>
 	)
