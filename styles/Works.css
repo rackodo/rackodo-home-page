@@ -55,3 +55,7 @@
 .worksItem:nth-child(even) {
     background-color: #111;
 }
+
+.worksItem:nth-child(odd) {
+    background-color: #222;
+}
