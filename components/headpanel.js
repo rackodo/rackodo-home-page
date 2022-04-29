@@ -10,6 +10,11 @@ const HeadPanel = () => {
 
     return (
         <div className="headpanel">
+            <div className="video-container">
+                <video autoPlay muted loop>
+                    <source src="/headpanel.mp4" type="video/mp4"/>
+                </video>
+            </div>
             <div className={`headpanel-container ${isVisible ? "panelVisible" : "panelNotVisible"}`} ref={containerRef}>
                 <div className="text">
                     <h1>Bash Elliott</h1>
