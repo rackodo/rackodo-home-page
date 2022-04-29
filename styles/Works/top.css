@@ -1,0 +1,9 @@
+.worksTop {
+    min-height: 210px;
+    flex: 100%;
+}
+
+.worksTop h1 {
+    padding: 0px 50px;
+    margin-bottom: 0px;
+}

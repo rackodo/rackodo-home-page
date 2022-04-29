@@ -1,0 +1,37 @@
+@keyframes headpanelFadeIn {
+    0% {
+        transform: translateX(-15px);
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
+
+.panelVisible {
+    animation: headpanelFadeIn 1s;
+}
+
+.panelNotVisible {
+    opacity: 0%;
+    animation-play-state: paused !important;
+}
+
+@keyframes headpanelExpand {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+.panelVisible h1::after {
+    animation: headpanelExpand 1s;
+}
+
+.panelNotVisible h1::after {
+    animation-play-state: paused !important;
+}

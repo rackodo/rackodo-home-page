@@ -1,13 +1,1 @@
-.footer {
-    background-color: #404040;
-    color: white;
-    display: flex;
-    flex-wrap: wrap;
-    justify-items: middle;
-    align-items: middle;
-}
-
-.footer p {
-    flex: auto;
-    text-align: center;
-}
+@import 'Footer/base.css'
