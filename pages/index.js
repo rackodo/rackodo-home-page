@@ -13,16 +13,14 @@ export default function Home() {
 			<HeadPanel />
 			<Info />
 			<Works title="What I've done">
-				<WorksItem 
-				image="/images/logo.png"
+				<WorksItem
 				title="Bashbox"
 				href="https://github.com/raccter/bashbox">
 					<p>
 						Bashbox is a textbox package for Python that provides a simple and easy to use system for creating simplistic and professional looking boxes to use in your Python programs.
 					</p>
 				</WorksItem>
-				<WorksItem 
-				image="/images/logo.png"
+				<WorksItem
 				title="Bashtable"
 				href="https://github.com/raccter/bashtable">
 					<p>
@@ -30,7 +28,6 @@ export default function Home() {
 					</p>
 				</WorksItem>
 				<WorksItem
-				image="/images/logo.png"
 				title="Json Gradient Maker"
 				href="https://github.com/raccter/gradient-json-minecraft">
 					<p>
