@@ -1,9 +1,16 @@
-import Image from 'next/image'
+import ScrollScript from './scrollscript'
 
 const HeadPanel = () => {
+
+    const [ containerRef, isVisible ] = ScrollScript({
+        root: null,
+        rootMargin: "0px",
+        threshold: 0
+    })
+
     return (
         <div className="headpanel">
-            <div className="headpanel-container">
+            <div className={`headpanel-container ${isVisible ? "panelVisible" : "panelNotVisible"}`} ref={containerRef}>
                 <div className="text">
                     <h1>Bash Elliott</h1>
                     <h3>Hobbyist Frontend and Python Developer based in Sydney, Australia</h3>
