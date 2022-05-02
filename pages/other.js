@@ -1,18 +1,15 @@
 import Navbar from '../components/navbar'
-import HeadPanel from '../components/headpanel'
 import HeadInfo from '../components/headinfo'
 import Info from '../components/info'
 import Works, {WorksItem} from '../components/works'
 import Skills from '../components/skills'
 import Footer from '../components/footer'
 
-export default function Home() {
+export default function Other() {
 	return (
 		<div>
 			<Navbar />
-			<HeadInfo title="Bash Elliott"/>
-			<HeadPanel />
-			<Info id="info"/>
+			<Info />
 			<Works title="What I've done">
 				<WorksItem
 				image="/images/project-logos/Bashbox.png"
