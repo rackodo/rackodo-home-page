@@ -7,6 +7,7 @@ import '../styles/Skills.css'
 import '../styles/Footer.css'
 
 function MyApp({ Component, pageProps }) {
+
   return <Component {...pageProps} />
 }
 
