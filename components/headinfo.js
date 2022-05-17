@@ -20,17 +20,17 @@ const HeadInfo = ({title}) => {
 
             {/* Open Graph / Facebook */}
             <meta property="og:type" content="website" />
-            <meta property="og:url" content="https://raccter.github.io/" />
+            <meta property="og:url" content="https://rackodo.github.io/" />
             <meta property="og:title" content="Bash Elliott" />
             <meta property="og:description" content="The Homepage of Bash Elliott - Hobbyist Frontend and Python Developer based in Sydney, Australia (They/Them)" />
-            <meta property="og:image" content="https://raw.githubusercontent.com/raccter/raccter.github.io/dev/public/images/station.JPG" />
+            <meta property="og:image" content="https://raw.githubusercontent.com/rackodo/rackodo.github.io/dev/public/images/station.JPG" />
 
             {/* Twitter */}
             <meta property="twitter:card" content="summary_large_image" />
-            <meta property="twitter:url" content="https://raccter.github.io/" />
+            <meta property="twitter:url" content="https://rackodo.github.io/" />
             <meta property="twitter:title" content="Bash Elliott" />
             <meta property="twitter:description" content="The Homepage of Bash Elliott - Hobbyist Frontend and Python Developer based in Sydney, Australia (They/Them)" />
-            <meta property="twitter:image" content="https://raw.githubusercontent.com/raccter/raccter.github.io/dev/public/images/station.JPG" />
+            <meta property="twitter:image" content="https://raw.githubusercontent.com/rackodo/rackodo.github.io/dev/public/images/station.JPG" />
         </Head>
     )
 }
