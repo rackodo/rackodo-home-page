@@ -38,6 +38,26 @@ export default function Home() {
 						Json Gradient Maker is a simple tool that allows you to create a gradient of colors in JSON format. This project is intended for use in Vanilla Minecraft as an easy way to generate JSON strings for scoreboards, team prefixes / suffixes or simple tellraw commands.
 					</p>
 				</WorksItem>
+				<WorksItem
+				image="/images/project-logos/card-page.png?v=2"
+				title="Card Page Design"
+				href="https://card-page-rackodo.vercel.app">
+					<p>
+						This is a small but simple design for a card page using NextJS. I also implemented a hue slider which can be used to affect the colour palette of the card dynamically.
+					</p>
+				</WorksItem>
+				<WorksItem
+				image="/images/project-logos/login-page.png"
+				title="Login Page Design"
+				href="https://login-page-rackodo.vercel.app">
+					<p>
+						This is a simple and sleek design for a login page using NextJS. Personal favourite touches are:
+						<ul>
+							<li>The password toggle button, which smoothly toggles the password display between being hidden and being exposed.</li>
+							<li>The dynamic form colouring. Individual fields are red until filled and when both fields are filled, the &quot;login&quot; button becomes blue.</li>
+						</ul>
+					</p>
+				</WorksItem>
 			</Works>
 			<Works title="What I'm doing">
 				<WorksItem

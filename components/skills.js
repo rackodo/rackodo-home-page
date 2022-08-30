@@ -23,6 +23,7 @@ const Skills = () => {
 					<SkillPoint skill="Javascript" experience="Somewhat Intermediate" />
 					<SkillPoint skill="HTML, CSS" experience="Advanced" />
 					<SkillPoint skill="Next.JS" experience="Intermediate" />
+					<SkillPoint skill="React" experience="Intermediate" />
 				</ul>
 			</SkillList>
 			<SkillList title="Video Editing">
