@@ -18,13 +18,14 @@ const Skills = () => {
 					Known Programming Languages: Python, Javascript<br />
 					Known Markup and Stylesheet Languages: HTML, CSS, Next.JS
 				</p>
-				<ul>
+				<table>
 					<SkillPoint skill="Python" experience="Somewhat Advanced" />
 					<SkillPoint skill="Javascript" experience="Somewhat Intermediate" />
-					<SkillPoint skill="HTML, CSS" experience="Advanced" />
+					<SkillPoint skill="HTML" experience="Advanced" />
+					<SkillPoint skill="CSS" experience="Advanced" />
 					<SkillPoint skill="Next.JS" experience="Intermediate" />
 					<SkillPoint skill="React" experience="Intermediate" />
-				</ul>
+				</table>
 			</SkillList>
 			<SkillList title="Video Editing">
 				<p>
@@ -34,10 +35,12 @@ const Skills = () => {
 					Known Video Editing Software: Adobe Premiere Pro, Adobe After Effects<br />
 					Known Audio Editing Software: Audacity
 				</p>
-				<ul>
-					<SkillPoint skill="Adobe Premiere Pro and Audacity" experience="Somewhat Advanced" />
+				<table>
 					<SkillPoint skill="Adobe After Effects" experience="Somewhat Basic" />
-				</ul>
+					<SkillPoint skill="Adobe Premiere Pro" experience="Somewhat Advanced" />
+					<SkillPoint skill="Audacity" experience="Somewhat Intermediate" />
+					<SkillPoint skill="DaVinci Resolve" experience="Somewhat Intermediate" />
+				</table>
 			</SkillList>
 			<SkillList title="Image Editing">
 				<p>
@@ -46,9 +49,9 @@ const Skills = () => {
 				<p>
 					Known Image Editing Software: Adobe Photoshop
 				</p>
-				<ul>
+				<table>
 					<SkillPoint skill="Adobe Photoshop" experience="Somewhat Intermediate" />
-				</ul>
+				</table>
 			</SkillList>
 			<SkillList title="System Administration">
 				<p>
@@ -58,16 +61,16 @@ const Skills = () => {
 					Known Desktop Operating Systems: Windows, Ubuntu Linux, Arch Linux<br />
 					Known Server Operating Systems: Ubuntu Linux
 				</p>
-				<ul>
+				<table>
 					<SkillPoint skill="Windows" experience="Experienced" />
 					<SkillPoint skill="Ubuntu Linux" experience="Intermediate" />
 					<SkillPoint skill="Arch Linux" experience="Somewhat Basic" />
-				</ul>
+				</table>
 			</SkillList>
 			<SkillList title="Other">
-				<ul>
+				<table>
 					<SkillPoint skill="Guitar, 4 years" experience="Somewhat Basic" />
-				</ul>
+				</table>
 			</SkillList>
 		</div>
 	)
@@ -91,7 +94,10 @@ const SkillList = ({title, children}) => {
 
 const SkillPoint = ({skill, experience}) => {
 	return (
-		<li>Experience with {skill}: <span className="skillExperience">{experience}</span></li>
+		<tr>
+			<th>{skill}</th>
+			<td>{experience}</td>
+		</tr>
 	)
 }
 

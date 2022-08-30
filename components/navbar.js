@@ -49,7 +49,7 @@ const NavbarLogo = () => {
 const NavbarLink = ({href, icon}) => {
 	return (
 		// eslint-disable-next-line @next/next/link-passhref
-		<Link href={href}>
+		<Link href={href} >
 			<div className="cell"><a href={href}><i className={icon}></i></a></div>
 		</Link>
 	)
