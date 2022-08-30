@@ -18,8 +18,11 @@ const Navbar = () => {
 					href="https://github.com/rackodo" 
 					icon="cp cp-github" />
 					<NavbarLink 
-					href="https://www.instagram.com/bash_elliott/" 
+					href="https://www.instagram.com/rackodo/" 
 					icon="cp cp-instagram" />
+					<NavbarLink
+					href="https://www.twitter.com/rackodohere"
+					icon="cp cp-twitter" />
 				</NavbarLinks>
 			</div>
 		</div>
