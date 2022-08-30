@@ -1,0 +1,38 @@
+@keyframes skillsFadeIn {
+    0% {
+        transform: translateX(-15px);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes skillsExpand {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+.skillsVisible::after {
+    animation: skillsExpand 1s;
+}
+
+.skillsNotVisible::after {
+    animation-play-state: paused !important;
+    width: 0%;
+}
+
+.skillListVisible {
+    animation: skillsFadeIn 1s;
+}
+
+.skillListNotVisible {
+    animation-play-state: paused;
+    transform: translateX(-15px);
+    opacity: 0;
+}
