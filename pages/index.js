@@ -54,7 +54,7 @@ export default function Home() {
 						This is a simple and sleek design for a login page using NextJS. Personal favourite touches are:
 						<ul>
 							<li>The password toggle button, which smoothly toggles the password display between being hidden and being exposed.</li>
-							<li>The dynamic form colouring. Individual fields are red until filled and when both fields are filled, the "login" button becomes blue.</li>
+							<li>The dynamic form colouring. Individual fields are red until filled and when both fields are filled, the &quot;login&quot; button becomes blue.</li>
 						</ul>
 					</p>
 				</WorksItem>
