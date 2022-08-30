@@ -15,7 +15,7 @@ const Navbar = () => {
 					href="https://www.youtube.com/channel/UChiRebGN9a1oSoG_QZj6LjQ" 
 					icon="cp cp-youtube" />
 					<NavbarLink 
-					href="https://github.com/raccter" 
+					href="https://github.com/rackodo" 
 					icon="cp cp-github" />
 					<NavbarLink 
 					href="https://www.instagram.com/bash_elliott/" 
