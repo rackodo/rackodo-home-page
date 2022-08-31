@@ -1,66 +1,72 @@
-/* Write a navbar Next component */
-
+import styles from '../styles/navbar.module.css'
 import Link from 'next/link'
-import Script from 'next/script'
 import Image from 'next/image'
+import { Flex, Box, Square, Text, Spacer } from '@chakra-ui/react'
 
-const Navbar = () => {
+
+export default function NavBar() {
 	return (
-		<div className="navbar">
-			<Script src="//pull.cappuccicons.com/cpf.js" />
-			<div className="navbar-container">
-				<NavbarLogo />
-				<NavbarLinks>
-					<NavbarLink 
-					href="https://www.youtube.com/channel/UChiRebGN9a1oSoG_QZj6LjQ" 
-					icon="cp cp-youtube" />
-					<NavbarLink 
-					href="https://github.com/rackodo" 
-					icon="cp cp-github" />
-					<NavbarLink 
-					href="https://www.instagram.com/rackodo/" 
-					icon="cp cp-instagram" />
-					<NavbarLink
-					href="https://www.twitter.com/rackodohere"
-					icon="cp cp-twitter" />
-				</NavbarLinks>
-			</div>
-		</div>
+		<nav className={styles.navbarWrapper}>
+			<Flex h="64px" alignItems="center">
+				<NavbarTitle />
+				<Spacer />
+				<NavbarBreaker />
+				<NavbarLinks />
+			</Flex>
+		</nav>
 	)
 }
 
-const NavbarLogo = () => {
+function NavbarTitle() {
 	return (
 		<Link href="/">
 			<a>
-				<Image
-					className="navbar-logo-image"
-					src="/images/logo.png"
-					alt="Logo"
-					width={70}
-					height={70}
-					layout="raw"
-				/>
+				<Box className={styles.titleContainer}>
+					{/* <Square bg="red.100" className={styles.titleLogo} size='64px'>
+						Logo
+					</Square> */}
+					<Image 
+					src="/favicon.ico"
+					width={48}
+					height={48}
+					alt="vercel"
+						className={styles.titleLogo} />
+					<Text className={styles.titleText}>
+						Rackodo
+					</Text>
+				</Box>
 			</a>
 		</Link>
 	)
 }
 
-const NavbarLink = ({href, icon}) => {
+function NavbarBreaker() {
 	return (
-		// eslint-disable-next-line @next/next/link-passhref
-		<Link href={href} >
-			<div className="cell"><a href={href}><i className={icon}></i></a></div>
+		<div className={styles.breaker} />
+	)
+}
+
+function NavbarLinks() {
+	return (
+		<Flex className={styles.linksContainer}>
+			<NavbarLink
+			name="Works"
+			href="/works" />
+			<NavbarLink
+			name="Contact"
+			href="mailto:bashelliott@gmail.com" />
+		</Flex>
+	)
+}
+
+function NavbarLink({name, href}) {
+	return (
+		<Link href={href}>
+			<a className={styles.linkContainer}>
+				<Box>
+					{name}
+				</Box>
+			</a>
 		</Link>
 	)
 }
-
-const NavbarLinks = ({children}) => {
-	return (
-		<div className="navbar-links">
-			{children}
-		</div>
-	)
-}
-
-export default Navbar
