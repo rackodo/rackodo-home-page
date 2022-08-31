@@ -26,6 +26,24 @@
     background-color: black;
 }
 
+.skills table {
+    border-collapse: collapse;
+}
+
+.skills th {
+    text-align: left;
+    padding: 5px 20px 5px 5px;
+    border-right: 1px gray solid;
+}
+
+.skills table tr:not(:last-child) th {
+    border-bottom: 1px gray solid;
+}
+
+.skills td {
+    padding-left: 20px;
+}
+
 @media screen and (min-width: 900px) {
     .skills {
         padding: 20px 250px;
