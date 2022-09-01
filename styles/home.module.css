@@ -1,0 +1,13 @@
+.content {
+	padding: 60px 100px;
+	max-width: 700px;
+	margin: auto;
+	height: 100vh;
+	outline: green 1px solid;
+}
+
+@media screen and (max-width: 700px) {
+	.content {
+		padding: 60px 50px;
+	}
+}

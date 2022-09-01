@@ -6,9 +6,11 @@ export default function Home() {
 	return (
 		<div>
 			<Navbar />
-			<Callout>
-				<p>Hi! I&apos;m an aspiring frontend website developer based in Australia!</p>
-			</Callout>
+			<main className={styles.content}>
+				<Callout>
+					<p>Hi! I&apos;m a frontend website developer based in Australia!</p>
+				</Callout>
+			</main>
 		</div>
 	)
 }

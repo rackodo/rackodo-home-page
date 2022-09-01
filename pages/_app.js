@@ -1,12 +1,21 @@
 import globals from '../styles/globals.css'
 
+import Head from 'next/head'
 import { ChakraProvider } from '@chakra-ui/react'
+import { ThemeProvider } from 'styled-components'
+import { lightTheme, darkTheme, GlobalStyles } from '../themeConfig'
 
 function MyApp({ Component, pageProps }) {
 	return (
-		<ChakraProvider>
-			<Component {...pageProps} />
-		</ChakraProvider>
+		<ThemeProvider theme={lightTheme}>
+			<ChakraProvider>
+				<GlobalStyles />
+				<Head>
+					<meta name="viewport" content="width=device-width, initial-scale=1" />
+				</Head>
+				<Component {...pageProps} />
+			</ChakraProvider>
+		</ThemeProvider>
 	)
 }
 

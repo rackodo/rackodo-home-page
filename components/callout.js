@@ -6,4 +6,4 @@ export default function Callout({children}) {
 			{children}			
 		</div>
 	)
-}
+} 

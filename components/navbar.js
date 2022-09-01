@@ -9,8 +9,6 @@ export default function NavBar() {
 		<nav className={styles.navbarWrapper}>
 			<Flex h="64px" alignItems="center">
 				<NavbarTitle />
-				<Spacer />
-				<NavbarBreaker />
 				<NavbarLinks />
 			</Flex>
 		</nav>
@@ -22,27 +20,12 @@ function NavbarTitle() {
 		<Link href="/">
 			<a>
 				<Box className={styles.titleContainer}>
-					{/* <Square bg="red.100" className={styles.titleLogo} size='64px'>
-						Logo
-					</Square> */}
-					<Image 
-					src="/favicon.ico"
-					width={48}
-					height={48}
-					alt="vercel"
-						className={styles.titleLogo} />
 					<Text className={styles.titleText}>
 						Rackodo
 					</Text>
 				</Box>
 			</a>
 		</Link>
-	)
-}
-
-function NavbarBreaker() {
-	return (
-		<div className={styles.breaker} />
 	)
 }
 
@@ -62,7 +45,7 @@ function NavbarLinks() {
 function NavbarLink({name, href}) {
 	return (
 		<Link href={href}>
-			<a className={styles.linkContainer}>
+			<a className={[styles.linkContainer, styles.underline].join(' ')}>
 				<Box>
 					{name}
 				</Box>
