@@ -1,9 +1,5 @@
 import { createGlobalStyle } from "styled-components";
 
-export const lightTheme = {
-
-}
-
 export const GlobalStyles = createGlobalStyle `
 	:root {
 		--1: hsl(197, 100%, 5%);
@@ -20,9 +16,5 @@ export const GlobalStyles = createGlobalStyle `
 
 	body {
 		background-color: var(--5);
-	}
-
-	* {
-		color: var(--1);
 	}
 `

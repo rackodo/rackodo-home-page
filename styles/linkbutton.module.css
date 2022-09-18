@@ -1,0 +1,17 @@
+.wrapper {
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	margin: 10px;
+	aspect-ratio: 1/1;
+	background-color: var(--6);
+	border-radius: 20%;
+}
+
+.button {
+	display: flex;
+	height: 100%;
+	align-items: center;
+	padding: 8px;
+	font-size: 20px;
+}

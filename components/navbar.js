@@ -1,8 +1,12 @@
 import styles from '../styles/navbar.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Flex, Box, Square, Text, Spacer } from '@chakra-ui/react'
+import InlineLink from './inlinelink'
+import { Menu, MenuButton, MenuItem, MenuList, Spacer, Button } from '@chakra-ui/react'
+import { HamburgerIcon, MoonIcon } from '@chakra-ui/icons'
 
+import links from './links.json'
+// import IconButton from './iconbutton'
 
 export default function NavBar() {
 	return (
@@ -10,7 +14,25 @@ export default function NavBar() {
 			<div className={styles.navbarContainer}>
 				<NavbarTitle />
 				<Spacer/>
-				<NavbarLinks />
+				<div className={styles.linksContainer}>
+					{links.map((link) =>
+						<NavbarLink key={link.name}
+						name={link.name}
+						href={link.href} />
+					)}
+				</div>
+				<div className={styles.linksMenu}>
+					<Menu>
+						<MenuButton className={styles.button} as={Button}><HamburgerIcon/></MenuButton>
+						<MenuList>
+							<Link href="/" passHref><MenuItem as="a">Home</MenuItem></Link>
+							{links.map((link) =>
+								<Link href={link.href} key={link.name} passHref><MenuItem as="a"> {link.name} </MenuItem></Link>
+							)}
+						</MenuList>
+					</Menu>
+				</div>
+				<Button className={[styles.themeButton, styles.button].join(" ")}><MoonIcon /></Button>
 			</div>
 		</nav>
 	)
@@ -21,32 +43,12 @@ function NavbarTitle() {
 		<Link href="/">
 			<a>
 				<div className={styles.titleContainer}>
-					<div className={styles.titleText}>
+					<div className={[styles.titleText, styles.underline].join(" ")}>
 						Rackodo
 					</div>
 				</div>
 			</a>
 		</Link>
-	)
-}
-
-function NavbarLinks() {
-	return (
-		<div className={styles.linksContainer}>
-			<NavbarLink
-			name="Resume"
-			href="/resume" />
-			<NavbarLink
-			name="Contact"
-			href="mailto:bashelliott@gmail.com" />
-			<NavbarLink
-			name="Source"
-			href="https://github.com/rackodo/rackodo-home-page"
-			target="_blank" />
-			{/* <NavbarLink
-			name="[TEST] 404 Page"
-			href="/notarealpage" /> */}
-		</div>
 	)
 }
 
