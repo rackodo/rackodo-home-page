@@ -17,7 +17,6 @@
 	align-items: center;
 	width: 800px;
 	text-align: center;
-	color: var(--1);
 }
 
 /* NavbarTitle Styling */
@@ -69,14 +68,6 @@
 	padding: 0px!important;
 }
 
-.themeButton {
-	background-color: var(--6)!important;
-}
-
-.themeButton svg path {
-	color: var(--0)!important;
-}
-
 .button span {
 	display: flex;
 	justify-content: center;
@@ -89,7 +80,6 @@
     content: '';
     height: 3px;
     width: calc(100%);
-    background-color: var(--3);
 	top: 0;
     left: 0;
     text-align: center;

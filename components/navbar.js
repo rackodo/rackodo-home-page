@@ -2,13 +2,15 @@ import styles from '../styles/navbar.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
 import InlineLink from './inlinelink'
-import { Menu, MenuButton, MenuItem, MenuList, Spacer, Button } from '@chakra-ui/react'
-import { HamburgerIcon, MoonIcon } from '@chakra-ui/icons'
+import { Menu, MenuButton, MenuItem, MenuList, Spacer, Button, useColorMode } from '@chakra-ui/react'
+import { HamburgerIcon, MoonIcon, SunIcon } from '@chakra-ui/icons'
 
 import links from './links.json'
 // import IconButton from './iconbutton'
 
 export default function NavBar() {
+	const { colorMode, toggleColorMode } = useColorMode()
+
 	return (
 		<nav className={styles.navbarWrapper}>
 			<div className={styles.navbarContainer}>
@@ -32,7 +34,7 @@ export default function NavBar() {
 						</MenuList>
 					</Menu>
 				</div>
-				<Button className={[styles.themeButton, styles.button].join(" ")}><MoonIcon /></Button>
+				<Button className={[styles.themeButton, styles.button].join(" ")} onClick={toggleColorMode}>{colorMode === 'light' ? <MoonIcon /> : <SunIcon />}</Button>
 			</div>
 		</nav>
 	)

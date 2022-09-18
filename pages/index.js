@@ -6,10 +6,13 @@ import Section from '../components/section'
 import Footer from '../components/footer'
 import Head from 'next/head'
 import InlineLink from '../components/inlinelink'
+import { useColorMode } from '@chakra-ui/react'
 
 export default function Home() {
+	const { colorMode } = useColorMode()
+
 	return (
-		<>
+		<div>
 			<Head>
 				<title>Bash Elliott</title>
 			</Head>
@@ -20,7 +23,7 @@ export default function Home() {
 						<p>Hi, I&apos;m a frontend web developer based in Australia!</p>
 					</Callout>
 					<ProfileCard
-					img="/images/logo.png"
+					img='/images/logo.png'
 					title="Bash Elliott"
 					desc="High School Graduate (They/Them)" />
 					<Section title="About Bash">
@@ -33,6 +36,6 @@ export default function Home() {
 				</main>
 				<Footer />
 			</div>
-		</>
+		</div>
 	)
 }
