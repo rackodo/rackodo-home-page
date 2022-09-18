@@ -21,4 +21,8 @@ export const GlobalStyles = createGlobalStyle `
 	body {
 		background-color: var(--5);
 	}
+
+	* {
+		color: var(--1);
+	}
 `

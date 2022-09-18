@@ -1,13 +1,26 @@
 .content {
-	padding: 60px 100px;
-	max-width: 700px;
+	padding: 60px 0px;
+	max-width: 500px;
 	margin: auto;
-	height: 100vh;
-	outline: green 1px solid;
+	/* outline: green 1px solid; */
+}
+
+.content > *:not(:last-child) {
+	margin-bottom: 20px;
+}
+
+.p {
+	text-indent: 16px;
+	text-align: justify;
+}
+
+.content a {
+	color: var(--0);
+	text-decoration: underline;
 }
 
 @media screen and (max-width: 700px) {
 	.content {
-		padding: 60px 50px;
+		padding: 60px 20px;
 	}
 }

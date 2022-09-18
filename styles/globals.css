@@ -1,20 +1,19 @@
 html,
 body {
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  background-color: var(--5);
-  overscroll-behavior: none;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	/* overscroll-behavior: none; */
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+	color: inherit;
+	text-decoration: none;
 }
 
 * {
-  box-sizing: border-box;
-  /* outline: 2px solid green; */
+	box-sizing: border-box;
+	/* outline: 1px dotted green; */
+	color: var(--1);
 }

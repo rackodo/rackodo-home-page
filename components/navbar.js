@@ -7,10 +7,11 @@ import { Flex, Box, Square, Text, Spacer } from '@chakra-ui/react'
 export default function NavBar() {
 	return (
 		<nav className={styles.navbarWrapper}>
-			<Flex h="64px" alignItems="center">
+			<div className={styles.navbarContainer}>
 				<NavbarTitle />
+				<Spacer/>
 				<NavbarLinks />
-			</Flex>
+			</div>
 		</nav>
 	)
 }
@@ -19,11 +20,11 @@ function NavbarTitle() {
 	return (
 		<Link href="/">
 			<a>
-				<Box className={styles.titleContainer}>
-					<Text className={styles.titleText}>
+				<div className={styles.titleContainer}>
+					<div className={styles.titleText}>
 						Rackodo
-					</Text>
-				</Box>
+					</div>
+				</div>
 			</a>
 		</Link>
 	)
@@ -31,24 +32,31 @@ function NavbarTitle() {
 
 function NavbarLinks() {
 	return (
-		<Flex className={styles.linksContainer}>
+		<div className={styles.linksContainer}>
 			<NavbarLink
-			name="Works"
-			href="/works" />
+			name="Resume"
+			href="/resume" />
 			<NavbarLink
 			name="Contact"
 			href="mailto:bashelliott@gmail.com" />
-		</Flex>
+			<NavbarLink
+			name="Source"
+			href="https://github.com/rackodo/rackodo-home-page"
+			target="_blank" />
+			{/* <NavbarLink
+			name="[TEST] 404 Page"
+			href="/notarealpage" /> */}
+		</div>
 	)
 }
 
-function NavbarLink({name, href}) {
+function NavbarLink({name, href, target}) {
 	return (
 		<Link href={href}>
-			<a className={[styles.linkContainer, styles.underline].join(' ')}>
-				<Box>
+			<a target={target} className={[styles.linkContainer, styles.underline].join(' ')}>
+				<div>
 					{name}
-				</Box>
+				</div>
 			</a>
 		</Link>
 	)
