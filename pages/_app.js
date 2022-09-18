@@ -12,6 +12,7 @@ function MyApp({ Component, pageProps }) {
 				<GlobalStyles />
 				<Head>
 					<meta name="viewport" content="width=device-width, initial-scale=1" />
+					<title>Bash Elliott</title>
 				</Head>
 				<Component {...pageProps} />
 			</ChakraProvider>
