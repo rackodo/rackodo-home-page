@@ -4,6 +4,10 @@
 		"href": "/resume"
 	},
 	{
+		"name": "Portfolio",
+		"href": "/portfolio"
+	},
+	{
 		"name": "Contact",
 		"href": "mailto:bashelliott@gmail.com"
 	},

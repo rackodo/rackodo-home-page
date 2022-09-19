@@ -1,25 +1,29 @@
 import { Box, Heading, Text } from '@chakra-ui/react'
+import Image from 'next/image'
 import styles from '../styles/works.module.css'
 
 export default function WorkGallery({ children }) {
 	return(
-		<Box as="div" className={styles.wrapper}>
-			<Text>WorkGallery</Text>
+		<div className={styles.wrapper}>
 			{children}
-		</Box>
+		</div>
 	)
 }
 
-export function WorkItem({ name, src, children }) {
+export function WorkItem({ name, src, href, children }) {
 	return(
-		<Box as="div" className={styles.itemWrapper}>
-			<Box as="div" className={styles.imageContainer}>
-
-			</Box>
-			<Box as="div" className={styles.textContainer}>
+		<div className={styles.itemWrapper}>
+			<div className={styles.itemImage}>
+				<Image
+				src={src}
+				layout="fill"
+				objectFit='cover'
+				alt={name} />
+			</div>
+			<div className={styles.itemText}>
 				<Heading as="h3">{name}</Heading>
-				<Text>{children}</Text>
-			</Box>
-		</Box>
+				{children}
+			</div>
+		</div>
 	)
 }
