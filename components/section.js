@@ -1,3 +1,4 @@
+import { Heading } from '@chakra-ui/react'
 import styles from '../styles/section.module.css'
 
 export default function Section({ title, layer, children }) {
@@ -6,16 +7,16 @@ export default function Section({ title, layer, children }) {
 	var element = ""
 	switch (layer) {
 		case 1:
-			element = <h1>{title}</h1>
+			element = <Heading as="h1">{title}</Heading>
 			break
 		case 2:
-			element = <h2>{title}</h2>
+			element = <Heading as="h2">{title}</Heading>
 			break
 		case 3:
-			element = <h3>{title}</h3>
+			element = <Heading as="h3">{title}</Heading>
 			break
 		default:
-			element = <h1>{title}</h1>
+			element = <Heading as="h1">{title}</Heading>
 	}
 
 

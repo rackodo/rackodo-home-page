@@ -30,6 +30,35 @@ const theme = extendTheme({
 			tertiary: {
 				default: '#579EB8',
 				_dark: '#4788A0'
+			},
+			button: {
+				default: '#87DFFF',
+				_dark: '#174758'
+			},
+			'themeButton.bg': {
+				default: 'purple.400',
+				_dark: 'yellow.400',
+			},
+			'themeButton.text': {
+				default: 'purple.800',
+				_dark: 'yellow.800'
+			}
+		},
+	},
+	components: {
+		Button: {
+			variants: {
+				base: {
+					bg: 'button',
+					color: 'text'
+				},
+				themeButton: {
+					bg: 'themeButton.bg',
+					color: 'themeButton.text'
+				}
+			},
+			defaultProps: {
+				variant: 'base'
 			}
 		}
 	}

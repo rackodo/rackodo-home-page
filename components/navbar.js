@@ -2,10 +2,11 @@ import styles from '../styles/navbar.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
 import InlineLink from './inlinelink'
-import { Menu, MenuButton, MenuItem, MenuList, Spacer, Button, useColorMode } from '@chakra-ui/react'
+import { Menu, MenuButton, MenuItem, MenuList, Spacer, Button, useColorMode, Box, Container, IconButton } from '@chakra-ui/react'
 import { HamburgerIcon, MoonIcon, SunIcon } from '@chakra-ui/icons'
 
 import links from './links.json'
+import { IconContext } from 'react-icons'
 // import IconButton from './iconbutton'
 
 export default function NavBar() {
@@ -25,7 +26,7 @@ export default function NavBar() {
 				</div>
 				<div className={styles.linksMenu}>
 					<Menu>
-						<MenuButton className={styles.button} as={Button}><HamburgerIcon/></MenuButton>
+						<MenuButton className={styles.button} as={IconButton} icon={<HamburgerIcon />} />
 						<MenuList>
 							<Link href="/" passHref><MenuItem as="a">Home</MenuItem></Link>
 							{links.map((link) =>
@@ -34,7 +35,7 @@ export default function NavBar() {
 						</MenuList>
 					</Menu>
 				</div>
-				<Button className={[styles.themeButton, styles.button].join(" ")} onClick={toggleColorMode}>{colorMode === 'light' ? <MoonIcon /> : <SunIcon />}</Button>
+				<IconButton className={[styles.themeButton, styles.button].join(" ")} onClick={toggleColorMode} variant="themeButton" icon={colorMode === 'light' ? <MoonIcon /> : <SunIcon />} />
 			</div>
 		</nav>
 	)
@@ -42,26 +43,26 @@ export default function NavBar() {
 
 function NavbarTitle() {
 	return (
-		<Link href="/">
-			<a>
-				<div className={styles.titleContainer}>
-					<div className={[styles.titleText, styles.underline].join(" ")}>
+		<Box as="div">
+			<Link href="/" passHref>
+				<Container as="a" className={styles.titleContainer}>
+					<Container as="div" className={[styles.titleText, styles.underline].join(" ")}>
 						Rackodo
-					</div>
-				</div>
-			</a>
-		</Link>
+					</Container>
+				</Container>
+			</Link>
+		</Box>
 	)
 }
 
 function NavbarLink({name, href, target}) {
 	return (
-		<Link href={href}>
-			<a target={target} className={[styles.linkContainer, styles.underline].join(' ')}>
-				<div>
+		<Box as="div">
+			<Link href={href} passHref>
+				<Container as="a" target={target} className={[styles.linkContainer, styles.underline].join(' ')}>
 					{name}
-				</div>
-			</a>
-		</Link>
+				</Container>
+			</Link>
+		</Box>
 	)
 }

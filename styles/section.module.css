@@ -15,6 +15,7 @@
 .wrapper h1 {
 	width: fit-content;
 	font-size: 30px;
+	padding-bottom: 5px;
 	margin-bottom: 5px;
 	border-bottom: solid 5px var(--ck-colors-primary);
 }
@@ -23,6 +24,7 @@
 	width: fit-content;
 	font-size: 24px;
 	/* font-weight: bold; */
+	padding-bottom: 5px;
 	margin-bottom: 5px;
 	border-bottom: solid 3px var(--ck-colors-secondary);
 }
