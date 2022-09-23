@@ -1,53 +1,29 @@
+import { Box, Heading, Text } from '@chakra-ui/react'
 import Image from 'next/image'
-import Link from 'next/link'
-import ScrollScript from './scrollscript'
+import styles from '../styles/works.module.css'
 
-const Works = ({title, children}) => {
-    const [ containerRef, isVisible ] = ScrollScript({
-        root: null,
-        rootMargin: "0px",
-        threshold: 0
-    })
-
-    return (
-        <div>
-            <div className="worksHeader" ref={containerRef}>
-                <h1 className={isVisible ? 'headerVisible' : 'headerNotVisible'}>{title}</h1>
-            </div>
-            <div className="works">
-                {children}
-            </div>
-        </div>
-    )
+export default function WorkGallery({ children }) {
+	return(
+		<div className={styles.wrapper}>
+			{children}
+		</div>
+	)
 }
 
-export const WorksItem = ({title, href, image, children}) => {
-    const [ containerRef, isVisible ] = ScrollScript({
-        root: null,
-        rootMargin: "0px",
-        threshold: 0
-    })
-
-    return (
-        <div className={`worksItem ${isVisible ? 'worksItemVisible' : 'worksItemNotVisible'}`} ref={containerRef}>
-            <div className="worksTop">
-                <Link href={href}><a href={href}>
-                    <div className={`worksImageWrapper`}>
-                        <Image
-                        src={image ? image : "/images/project-logos/unknown.png"}
-                        alt={title}
-                        width={250}
-                        height={250}
-                        layout="raw" />
-                    </div>
-                    <h1>{title}</h1>
-                </a></Link>
-            </div>
-            <div className="worksBottom">
-                {children}
-            </div>
-        </div>
-    )
+export function WorkItem({ name, src, href, children }) {
+	return(
+		<div className={styles.itemWrapper}>
+			<div className={styles.itemImage}>
+				<Image
+				src={src}
+				layout="fill"
+				objectFit='cover'
+				alt={name} />
+			</div>
+			<div className={styles.itemText}>
+				<Heading as="h3">{name}</Heading>
+				{children}
+			</div>
+		</div>
+	)
 }
-
-export default Works

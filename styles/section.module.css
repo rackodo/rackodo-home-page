@@ -1,0 +1,30 @@
+.contentWrapper p {
+	/* text-indent: 1em; */
+	margin-bottom: 10px;
+}
+
+.contentWrapper {
+	/* font-size: medium; */
+	margin-top: 10px;
+}
+
+.wrapper {
+	padding-top: 5px;
+}
+
+.wrapper h1 {
+	width: fit-content;
+	font-size: 30px;
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+	border-bottom: solid 5px var(--ck-colors-primary);
+}
+
+.wrapper h2 {
+	width: fit-content;
+	font-size: 24px;
+	/* font-weight: bold; */
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+	border-bottom: solid 3px var(--ck-colors-secondary);
+}

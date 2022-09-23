@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+/* Navbar Styling */
+.navbarWrapper {
+	backdrop-filter: blur(5px);
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	z-index: 100;
+}
+
+.navbarContainer {
+	display: flex;
+	/* padding: 0px 25px; */
+	align-items: center;
+	width: 800px;
+	text-align: center;
+}
+
+/* NavbarTitle Styling */
+.titleContainer {
+	transition: all 0.25s ease-in-out;
+	position: relative;
+	display: flex;
+	height: 100%;
+}
+
+.titleText {
+	display: flex;
+	height: 60px;
+	align-items: center;
+	font-size: 20px;
+	font-weight: bold;
+	font-family: 'Roboto Mono', monospace;
+	transition: color 0.25s ease-in-out;
+}
+
+/* NavbarLinks Styling */
+.linksContainer {
+	display: flex;
+	height: 100%;
+}
+
+/* NavbarLink Styling */
+.linkContainer {
+	display: flex;
+	padding: 5px 10px;
+	height: 100%;
+	align-items: center;
+	margin: auto 5px;
+	position: relative;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+
+	transition: all 0.25s ease-in-out;
+}
+
+.linksMenu {
+	display: none;
+}
+
+.button {
+	margin: 10px;
+	aspect-ratio: 1/1;
+	display: flex;
+	padding: 0px!important;
+	/* background-color: red!important; */
+}
+
+.button span {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Creates an underline underneath an element that expands upon hover. */
+.underline::before {
+    position: absolute;
+    content: '';
+    height: 3px;
+    width: calc(100%);
+	top: 0px;
+    left: 0;
+    text-align: center;
+    transform: scaleX(0);
+    transition: all 0.25s ease-in-out;
+	background-color: var(--ck-colors-primary);
+}
+
+.underline:hover::before {
+    transform: scaleX(1);
+}
+
+@media screen and (max-width: 700px) {
+	.linksContainer {
+		display: none;
+	}
+
+	.linksMenu {
+		display: flex;
+	}
+}

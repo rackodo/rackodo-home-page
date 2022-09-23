@@ -1,11 +1,9 @@
-import Link from 'next/link'
+import styles from '../styles/footer.module.css'
 
-const Footer = () => {
-    return (
-        <div className="footer">
-            <p>Bash Elliott, 2022</p>
-        </div>
-    )
+export default function Footer() {
+	return(
+		<div className={styles.wrapper}>
+			© 2022 Bash Elliott. All Rights Reserved.
+		</div>
+	)
 }
-
-export default Footer
