@@ -1,14 +1,25 @@
-import { SearchIcon, SunIcon } from "@chakra-ui/icons";
+import {
+	ChevronDownIcon,
+	ChevronUpIcon,
+	SunIcon
+} from "@chakra-ui/icons";
+
 import { 
-	Box, 
+	Box,
 	Center, 
+	Container, 
 	Flex, 
 	Heading,
 	IconButton,
-	Image, 
 	Link, 
-	Spacer
+	Menu, 
+	MenuButton, 
+	MenuItem, 
+	MenuList, 
+	Spacer,
+	Text
 } from "@chakra-ui/react";
+import links from './links.json'
 
 export default function Navbar() {
 	return(
@@ -17,21 +28,16 @@ export default function Navbar() {
 		width="100vw"
 		position="fixed"
 		backdropFilter='blur(10px)'
-		top={0} >
+		top={0}
+		left={0} >
 			<Flex
-			w="600px"
+			w={800}
 			h="50px"
 			bg="red.200"
 			alignItems="center"
-			gap={6}
-			px={4} >
-				<Image
-				w={8}
-				h={8}
-				bg="red.300"
-				alt="Rackodo Logo"
-				borderRadius={100}
-				src="/images/logo.png" />
+			m="auto"
+			px={4}
+			gap={8} >
 				<Heading
 				fontSize={18}
 				display="flex"
@@ -45,19 +51,49 @@ export default function Navbar() {
 				h="100%"
 				gap={4}
 				alignItems={"center"} >
-					<NavLink href="/">Home</NavLink>
-					<NavLink href="#one">Contact</NavLink>
-					<NavLink href="#two">Works</NavLink>
-					<NavLink href="#three">Resume</NavLink>
+					{links.map((link) => 
+						<NavLink key={link.name} href={link.href}>{link.name}</NavLink>
+					)}
 				</Box>
 				<Spacer/>
-				<IconButton
-				w={8}
-				h={8}
-				size="sm"
-				bg="red.300"
-				borderRadius={10}
-				icon={<SunIcon />} />
+				<Flex gap={4}>
+					<Menu>
+						{({ isOpen }) => (
+						<>
+							<MenuButton
+							as={IconButton}
+							w={10}
+							h={10}
+							bg="red.300"
+							borderRadius={10}
+							icon={isOpen ? <ChevronUpIcon/> : <ChevronDownIcon/>}/>
+							<MenuList
+							bg={"green.200"}
+							p={0} >
+								{links.map((link) =>
+									<NavLink
+									as={MenuItem}
+									key={link.name}
+									href={link.href} >
+										<Text
+										p={2}
+										width="100%"
+										_hover={{
+											bg: 'green.300'
+										}} >{link.name}</Text>
+									</NavLink>
+								)}
+							</MenuList>
+						</>
+						)}
+					</Menu>
+					<IconButton
+					w={10}
+					h={10}
+					bg="red.300"
+					borderRadius={10}
+					icon={<SunIcon />} />
+				</Flex>
 			</Flex>
 		</Center>
 	)
