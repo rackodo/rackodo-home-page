@@ -1,4 +1,10 @@
-import { Box, calc, Container, Flex, Heading, Image, Spacer, Text } from "@chakra-ui/react";
+import {
+	Box,
+	Flex,
+	Heading,
+	Image,
+	Text
+} from "@chakra-ui/react";
 
 export default function ProfileCard() {
 	return(

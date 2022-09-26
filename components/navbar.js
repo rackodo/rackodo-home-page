@@ -7,11 +7,9 @@ import {
 import { 
 	Box,
 	Center, 
-	Container, 
 	Flex, 
 	Heading,
 	IconButton,
-	Link, 
 	Menu, 
 	MenuButton, 
 	MenuItem, 
@@ -19,6 +17,9 @@ import {
 	Spacer,
 	Text
 } from "@chakra-ui/react";
+
+import Link from "next/link";
+
 import links from './links.json'
 
 export default function Navbar() {
@@ -29,9 +30,10 @@ export default function Navbar() {
 		position="fixed"
 		backdropFilter='blur(10px)'
 		top={0}
-		left={0} >
+		left={0}
+		zIndex={1} >
 			<Flex
-			w={800}
+			w={650}
 			h="50px"
 			bg="red.200"
 			alignItems="center"
@@ -47,10 +49,10 @@ export default function Navbar() {
 					Rackodo
 				</Heading>
 				<Box
-				display="flex"
 				h="100%"
 				gap={4}
-				alignItems={"center"} >
+				alignItems={"center"}
+				display={{base: "none", md: "flex"}} >
 					{links.map((link) => 
 						<NavLink key={link.name} href={link.href}>{link.name}</NavLink>
 					)}
@@ -66,10 +68,12 @@ export default function Navbar() {
 							h={10}
 							bg="red.300"
 							borderRadius={10}
-							icon={isOpen ? <ChevronUpIcon/> : <ChevronDownIcon/>}/>
+							icon={isOpen ? <ChevronUpIcon/> : <ChevronDownIcon/>}
+							display={{base: "inline-flex", md: "none"}} />
 							<MenuList
 							bg={"green.200"}
-							p={0} >
+							p={0} 
+							display={{base: "block", md: "none"}}  >
 								{links.map((link) =>
 									<NavLink
 									as={MenuItem}
@@ -102,11 +106,8 @@ export default function Navbar() {
 function NavLink({ href, children }) {
 	return(
 		<Link
-		href={href}
-		display="flex"
-		alignSelf="stretch"
-		alignItems="center" >
-			{children}
+		href={href} passHref>
+			<Box as="a" display="flex" alignItems="center" alignSelf="stretch">{children}</Box>
 		</Link>
 	)
 }
