@@ -5,6 +5,7 @@ import Navbar from "../components/navbar";
 import { motion, AnimatePresence } from "framer-motion"
 import { useRouter } from "next/router";
 import Footer from "../components/footer";
+import Callout from "../components/callout";
 
 
 export default function Main({ children }) {
@@ -62,6 +63,7 @@ export default function Main({ children }) {
 					m="auto"
 					bg={"blue.200"} >
 						<Stack spacing={4}>
+						<Callout>Hi, I&apos;m a frontend web developer based in Australia!</Callout>
 							{children}
 							<Footer/>
 						</Stack>
