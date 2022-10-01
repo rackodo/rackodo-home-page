@@ -1,68 +1,99 @@
-import styles from '../styles/navbar.module.css'
-import Link from 'next/link'
-import Image from 'next/image'
-import InlineLink from './inlinelink'
-import { Menu, MenuButton, MenuItem, MenuList, Spacer, Button, useColorMode, Box, Container, IconButton } from '@chakra-ui/react'
-import { HamburgerIcon, MoonIcon, SunIcon } from '@chakra-ui/icons'
+import { ChevronDownIcon, ChevronUpIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
+
+import { Box, Center, Flex, Heading, IconButton, Menu, MenuButton, MenuItem, MenuList, Spacer, Text, useColorMode } from "@chakra-ui/react";
+
+import Link from "next/link";
 
 import links from './links.json'
-import { IconContext } from 'react-icons'
-// import IconButton from './iconbutton'
 
-export default function NavBar() {
+export default function Navbar() {
 	const { colorMode, toggleColorMode } = useColorMode()
 
-	return (
-		<nav className={styles.navbarWrapper}>
-			<div className={styles.navbarContainer}>
-				<NavbarTitle />
-				<Spacer/>
-				<div className={styles.linksContainer}>
-					{links.map((link) =>
-						<NavbarLink key={link.name}
-						name={link.name}
-						href={link.href} />
+	return(
+		<Center
+		width="100vw"
+		position="fixed"
+		backdropFilter='blur(10px)'
+		top={0}
+		left={0}
+		zIndex={1} >
+			<Flex
+			w={650}
+			h="50px"
+			bg={colorMode === 'light' ? 'dark.250' : 'light.250'}
+			alignItems="center"
+			m="auto"
+			px={4}
+			gap={8} >
+				<Heading
+				fontSize={18}
+				display="flex"
+				alignSelf="stretch"
+				alignItems="center"
+				padding="auto" >
+					Rackodo
+				</Heading>
+				<Box
+				h="100%"
+				gap={4}
+				alignItems={"center"}
+				display={{base: "none", md: "flex"}} >
+					{links.map((link) => 
+						<NavLink key={link.name} href={link.href}>{link.name}</NavLink>
 					)}
-				</div>
-				<div className={styles.linksMenu}>
+				</Box>
+				<Spacer/>
+				<Flex gap={4}>
 					<Menu>
-						<MenuButton className={styles.button} as={IconButton} icon={<HamburgerIcon />} />
-						<MenuList>
-							<Link href="/" passHref><MenuItem as="a">Home</MenuItem></Link>
-							{links.map((link) =>
-								<Link href={link.href} key={link.name} passHref><MenuItem as="a"> {link.name} </MenuItem></Link>
-							)}
-						</MenuList>
+						{({ isOpen }) => (
+						<>
+							<MenuButton
+							as={IconButton}
+							w={10}
+							h={10}
+							bg={colorMode === 'light' ? 'dark.300' : 'light.300'}
+							borderRadius={10}
+							icon={isOpen ? <ChevronUpIcon/> : <ChevronDownIcon/>}
+							display={{base: "inline-flex", md: "none"}} />
+							<MenuList
+							bg={colorMode === 'light' ? 'dark.400' : 'light.400'}
+							p={0} 
+							display={{base: "block", md: "none"}}  >
+								{links.map((link) =>
+									<NavLink
+									as={MenuItem}
+									key={link.name}
+									href={link.href} >
+										<Text
+										p={2}
+										width="100%"
+										_hover={{
+											bg: colorMode === 'light' ? 'dark.500' : 'light.500'
+										}} >{link.name}</Text>
+									</NavLink>
+								)}
+							</MenuList>
+						</>
+						)}
 					</Menu>
-				</div>
-				<IconButton className={[styles.themeButton, styles.button].join(" ")} onClick={toggleColorMode} variant="themeButton" icon={colorMode === 'light' ? <MoonIcon /> : <SunIcon />} />
-			</div>
-		</nav>
+					<IconButton
+					w={10}
+					h={10}
+					bg={colorMode === 'light' ? 'dark.300' : 'light.300'}
+					borderRadius={10}
+					icon={colorMode === 'light' ? <MoonIcon/> : <SunIcon />}
+					onClick={toggleColorMode} />
+				</Flex>
+			</Flex>
+		</Center>
 	)
 }
 
-function NavbarTitle() {
-	return (
-		<Box as="div">
-			<Link href="/" passHref>
-				<Container as="a" className={styles.titleContainer}>
-					<Container as="div" className={[styles.titleText, styles.underline].join(" ")}>
-						Rackodo
-					</Container>
-				</Container>
-			</Link>
-		</Box>
-	)
-}
-
-function NavbarLink({name, href, target}) {
-	return (
-		<Box as="div">
-			<Link href={href} passHref>
-				<Container as="a" target={target} className={[styles.linkContainer, styles.underline].join(' ')}>
-					{name}
-				</Container>
-			</Link>
-		</Box>
+function NavLink({ href, children }) {
+	return(
+		<Link
+		href={href} passHref>
+			<Box as="a" display="flex" alignItems="center" alignSelf="stretch">{children}</Box>
+		</Link>
 	)
 }
