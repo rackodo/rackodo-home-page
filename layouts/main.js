@@ -1,14 +1,12 @@
-import {
-	Container, Stack
-} from "@chakra-ui/react";
+import { Container, Stack, useColorMode } from "@chakra-ui/react";
 import Navbar from "../components/navbar";
 import { motion, AnimatePresence } from "framer-motion"
 import { useRouter } from "next/router";
 import Footer from "../components/footer";
-import Callout from "../components/callout";
 
 
 export default function Main({ children }) {
+	const { colorMode, toggleColorMode } = useColorMode()
 	const { asPath } = useRouter();
 
 	const variants = {
@@ -45,7 +43,8 @@ export default function Main({ children }) {
 			<Container
 			maxW="100vw"
 			p={0}
-			bg={"blue.100"} >
+			// pt={2}
+			bg={colorMode === 'light' ? 'dark.100' : 'light.100'} >
 
 			<AnimatePresence
 			initial={false}
@@ -61,9 +60,8 @@ export default function Main({ children }) {
 					minH={"100vh"}
 					py={"60px"}
 					m="auto"
-					bg={"blue.200"} >
-						<Stack spacing={4}>
-						<Callout>Hi, I&apos;m a frontend web developer based in Australia!</Callout>
+					bg={colorMode === 'light' ? 'dark.200' : 'light.200'} >
+						<Stack spacing={4} pt={2}>
 							{children}
 							<Footer/>
 						</Stack>

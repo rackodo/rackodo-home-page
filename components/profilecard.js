@@ -1,17 +1,13 @@
-import {
-	Box,
-	Flex,
-	Heading,
-	Image,
-	Text
-} from "@chakra-ui/react";
+import { Box, Flex, Heading, Image, Text, useColorMode } from "@chakra-ui/react";
 
 export default function ProfileCard() {
+	const { colorMode, toggleColorMode } = useColorMode()
+
 	return(
 		<Flex
 		alignItems="center"
 		justifyContent="center"
-		bg="blue.300"
+		bg={colorMode === 'light' ? 'dark.300' : 'light.300'}
 		p={4}
 		borderRadius={15}
 		gap={4}

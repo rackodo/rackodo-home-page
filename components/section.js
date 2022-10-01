@@ -1,11 +1,13 @@
-import { Container, Stack, Text } from "@chakra-ui/react";
+import { Stack, Text, useColorMode } from "@chakra-ui/react";
 
 export default function Section({ children }) {
+	const { colorMode, toggleColorMode } = useColorMode()
+
 	return(
 		<Stack
 		p={8}
 		maxW={"none"}
-		bg={"blue.300"}
+		bg={colorMode === 'light' ? 'dark.300' : 'light.300'}
 		borderRadius={15}
 		spacing={4} >
 			{children}

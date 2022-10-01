@@ -1,31 +1,16 @@
-import {
-	ChevronDownIcon,
-	ChevronUpIcon,
-	SunIcon
-} from "@chakra-ui/icons";
+import { ChevronDownIcon, ChevronUpIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 
-import { 
-	Box,
-	Center, 
-	Flex, 
-	Heading,
-	IconButton,
-	Menu, 
-	MenuButton, 
-	MenuItem, 
-	MenuList, 
-	Spacer,
-	Text
-} from "@chakra-ui/react";
+import { Box, Center, Flex, Heading, IconButton, Menu, MenuButton, MenuItem, MenuList, Spacer, Text, useColorMode } from "@chakra-ui/react";
 
 import Link from "next/link";
 
 import links from './links.json'
 
 export default function Navbar() {
+	const { colorMode, toggleColorMode } = useColorMode()
+
 	return(
 		<Center
-		bg="red.100" 
 		width="100vw"
 		position="fixed"
 		backdropFilter='blur(10px)'
@@ -35,7 +20,7 @@ export default function Navbar() {
 			<Flex
 			w={650}
 			h="50px"
-			bg="red.200"
+			bg={colorMode === 'light' ? 'dark.250' : 'light.250'}
 			alignItems="center"
 			m="auto"
 			px={4}
@@ -66,12 +51,12 @@ export default function Navbar() {
 							as={IconButton}
 							w={10}
 							h={10}
-							bg="red.300"
+							bg={colorMode === 'light' ? 'dark.300' : 'light.300'}
 							borderRadius={10}
 							icon={isOpen ? <ChevronUpIcon/> : <ChevronDownIcon/>}
 							display={{base: "inline-flex", md: "none"}} />
 							<MenuList
-							bg={"green.200"}
+							bg={colorMode === 'light' ? 'dark.400' : 'light.400'}
 							p={0} 
 							display={{base: "block", md: "none"}}  >
 								{links.map((link) =>
@@ -83,7 +68,7 @@ export default function Navbar() {
 										p={2}
 										width="100%"
 										_hover={{
-											bg: 'green.300'
+											bg: colorMode === 'light' ? 'dark.500' : 'light.500'
 										}} >{link.name}</Text>
 									</NavLink>
 								)}
@@ -94,9 +79,10 @@ export default function Navbar() {
 					<IconButton
 					w={10}
 					h={10}
-					bg="red.300"
+					bg={colorMode === 'light' ? 'dark.300' : 'light.300'}
 					borderRadius={10}
-					icon={<SunIcon />} />
+					icon={colorMode === 'light' ? <MoonIcon/> : <SunIcon />}
+					onClick={toggleColorMode} />
 				</Flex>
 			</Flex>
 		</Center>
