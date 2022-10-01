@@ -10,7 +10,7 @@ export default function Gallery({children}) {
 	)
 }
 
-export function GalleryItem({src, href, name, children}) {
+export function GalleryItem({src, href, name, children, isExternal}) {
 	return(
 		<Flex
 		flexWrap={{base: "wrap", sm: "nowrap"}} >
@@ -19,7 +19,7 @@ export function GalleryItem({src, href, name, children}) {
 			flex={{base: "100%", sm: "30%"}}
 			alignItems="center"
 			display="flex"
-			isExternal >
+			isExternal={isExternal} >
 				<Box
 				width={{base: "100%"}}
 				borderRadius={15}
