@@ -14,9 +14,5 @@
 	{
 		"name": "Contact",
 		"href": "mailto:bashelliott@gmail.com"
-	},
-	{
-		"name": "Invalid",
-		"href": "/notapage"
 	}
 ]
