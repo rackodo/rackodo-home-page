@@ -51,10 +51,10 @@ export default function Navbar() {
 							as={IconButton}
 							w={10}
 							h={10}
-							bg={colorMode === 'light' ? 'dark.300' : 'light.300'}
 							borderRadius={10}
 							icon={isOpen ? <ChevronUpIcon/> : <ChevronDownIcon/>}
-							display={{base: "inline-flex", md: "none"}} />
+							display={{base: "inline-flex", md: "none"}}
+							variant="IconButton" />
 							<MenuList
 							bg={colorMode === 'light' ? 'dark.400' : 'light.400'}
 							p={0} 
@@ -79,10 +79,13 @@ export default function Navbar() {
 					<IconButton
 					w={10}
 					h={10}
-					bg={colorMode === 'light' ? 'dark.300' : 'light.300'}
 					borderRadius={10}
 					icon={colorMode === 'light' ? <MoonIcon/> : <SunIcon />}
-					onClick={toggleColorMode} />
+					onClick={toggleColorMode}
+					bg={colorMode === 'light' ? 'yellow.400' : 'purple.400 '}
+					_hover={{
+						bg: colorMode === 'light' ? 'yellow.500' : 'purple.500'
+					}} />
 				</Flex>
 			</Flex>
 		</Center>

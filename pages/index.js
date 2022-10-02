@@ -9,15 +9,14 @@ import { ChevronRightIcon } from "@chakra-ui/icons";
 import { useRouter } from "next/router";
 
 export default function Home() {
-	const { colorMode, toggleColorMode } = useColorMode()
 	const router = useRouter()
 
 	return(
 		<>
-			<Callout>Hi, I&apos;m a frontend web developer based in Australia!</Callout>
 			<ProfileCard />
+			<Callout>Hi, I&apos;m a frontend web developer based in Australia!</Callout>
 			<Section>
-				<H1>Work</H1>
+				<H1>About</H1>
 				<ParaSection>
 					Bash is a soon-to-be high school graduate with a passion for computing, robotics, software development and website design. They&apos;ve tried their hand at a variety of challenges in the programming field, including game development and app development, and even practices some sys-admin knowledge with their two servers at home. When not online, they enjoy watching films and exploring their neighbourhood.
 				</ParaSection>
@@ -26,7 +25,6 @@ export default function Home() {
 				</ParaSection>
 				<Container p={0} textAlign="center">
 					<Button
-					bg={colorMode === 'light' ? 'dark.400' : 'light.400'}
 					rightIcon={<ChevronRightIcon/>}
 					onClick={() => router.push('/portfolio')} >
 						My portfolio
