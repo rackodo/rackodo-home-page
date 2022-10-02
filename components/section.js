@@ -1,29 +1,28 @@
-import { Heading } from '@chakra-ui/react'
-import styles from '../styles/section.module.css'
+import { Stack, Text, useColorMode } from "@chakra-ui/react";
 
-export default function Section({ title, layer, children }) {
-
-	title = (title == undefined) ? "Section" : title
-	var element = ""
-	switch (layer) {
-		case 1:
-			element = <Heading as="h1">{title}</Heading>
-			break
-		case 2:
-			element = <Heading as="h2">{title}</Heading>
-			break
-		case 3:
-			element = <Heading as="h3">{title}</Heading>
-			break
-		default:
-			element = <Heading as="h1">{title}</Heading>
-	}
-
+export default function Section({ children }) {
+	const { colorMode, toggleColorMode } = useColorMode()
 
 	return(
-		<div className={styles.wrapper}>
-			{element}
-			<div className={styles.contentWrapper}>{children}</div>
-		</div>
+		<Stack
+		p={8}
+		maxW={"none"}
+		bg={colorMode === 'light' ? 'dark.300' : 'light.300'}
+		borderRadius={15}
+		spacing={4} >
+			{children}
+		</Stack>
+	)
+}
+
+export function ParaSection({ children }) {
+	return(
+		<Text style={{ textIndent: 16 }} textAlign="justify">{children}</Text>
+	)
+}
+
+export function TextSection({ children }) {
+	return(
+		<Text textAlign="justify">{children}</Text>
 	)
 }

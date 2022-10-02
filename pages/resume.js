@@ -1,76 +1,66 @@
-import styles from '../styles/home.module.css'
-import Navbar from '../components/navbar'
-import Section from '../components/section'
-import Table, {TableItem} from '../components/table'
-import Head from 'next/head'
-import Footer from '../components/footer'
+import React from "react";
+import Section from "../components/section";
+import { H1, H2, H3 } from "../components/headings";
+import { Text } from "@chakra-ui/react";
 
 export default function Resume() {
 	return(
-		<div>
-			<main className={styles.content}>
-				<Section title="Skills" layer={1}>
-					<Section title="Coding" layer={2}>
-						<p>9 years of experience - Personal Projects</p>
-						<p>Known Programming Languages: Python, Javascript
-							<br/>Known Markup and Stylesheet Languages: HTML, CSS, Next.JS</p>
+		<>
+			<Section>
+				<H1>Resume</H1>
+			</Section>
+			<Section>
+				<H2>Skills</H2>
+				<H3>Coding</H3>
+				<Text>
+					9 years of experience - Personal Projects<br/>
+					Known Programming Languages: Python, Javascript<br/>
+					Known Markup and Stylesheet Languages: HTML, CSS, Next.JS
+				</Text>
+				<Text>
+					<b>Python</b> Somewhat Advanced<br/>
+					<b>Javascript</b> Somewhat Intermediate<br/>
+					<b>HTML</b> Advanced<br/>
+					<b>CSS</b> Advanced<br/>
+					<b>Next.JS</b> Intermediate<br/>
+					<b>React</b> Intermediate
+				</Text>
 
-						<Table>
-							<TableItem
-							title="Python"
-							content="Somewhat Advanced" />
-							<TableItem
-							title="Javascript"
-							content="Somewhat Intermediate" />
-							<TableItem
-							title="HTML"
-							content="Advanced" />
-							<TableItem
-							title="CSS"
-							content="Advanced" />
-							<TableItem
-							title="Next.JS"
-							content="Intermediate" />
-							<TableItem
-							title="React"
-							content="Intermediate" />
-						</Table>
-					</Section>
-					<Section title="Video Editing" layer={2}>
-						<p>3 years of experience - Personal Projects</p>
+				<H3>Video Editing</H3>
+				<Text>
+					3 years of experience - Personal Projects<br/>
+					Known Video Editing Software: Adobe Premiere Pro, Adobe After Effects<br/>
+					Known Audio Editing Software: Audacity
+				</Text>
+				<Text>	
+					<b>Adobe After Effects</b> Somewhat Basic<br/>
+					<b>Adobe Premiere Pro</b> Somewhat Advanced<br/>
+					<b>Audacity</b> Somewhat Intermediate<br/>
+					<b>DaVinci Resolve</b> Somewhat Intermediate
+				</Text>
 
-						<p>Known Video Editing Software: Adobe Premiere Pro, Adobe After Effects
-						<br/>Known Audio Editing Software: Audacity</p>
+				<H3>Image Editing</H3>
+				<Text>
+					5 years of experience - Personal Projects<br/>
+					Known Image Editing Software: Adobe Photoshop
+				</Text>
+				<Text>
+					<b>Adobe Photoshop</b> Somewhat Intermediate
+				</Text>
 
-						<Table>
-							<TableItem title="Adobe After Effects"	content="Somewhat Basic" />
-							<TableItem title="Adobe Premiere Pro"	content="Somewhat Advanced" />
-							<TableItem title="Audacity"	content="Somewhat Intermediate" />
-							<TableItem title="DaVinci Resolve"	content="Somewhat Intermediate" />
-						</Table>
-					</Section>
-					<Section title="Image Editing" layer={2}>
-						<p>5 years of experience - Personal Projects</p>
-
-						<p>Known Image Editing Software: Adobe Photoshop</p>
-
-						<Table>
-							<TableItem title="Adobe Photoshop" content="Somewhat Intermediate" />
-						</Table>
-					</Section>
-					<Section title="System Administration" layer={2}>
-						<p>1 year of experience - Personal Projects</p>
-
-						<p>Known Desktop Operating Systems: Windows, Ubuntu Linux, Arch Linux
-						<br/>Known Server Operating Systems: Ubuntu Linux</p>
-						<Table>
-							<TableItem title="Windows" content="Experienced" />
-							<TableItem title="Ubuntu Linux"	content="Intermediate" />
-							<TableItem title="Arch Linux"	content="Somewhat Basic" />
-						</Table>
-					</Section>
-				</Section>
-			</main>
-		</div>
+				<H3>System Administration</H3>
+				<Text>
+					1 year of experience - Personal Projects<br/>
+					Known Desktop Operating Systems: Windows, Ubuntu Linux, Arch Linux<br/>
+					Known Server Operating Systems: Ubuntu Linux
+				</Text>
+				<Text>
+					<b>Windows</b> Experienced<br/>
+					<b>macOS</b> Somewhat Experienced<br/>
+					<b>Ubuntu Linux</b> Intermediate<br/>
+					<b>Arch Linux</b> Somewhat Basic
+				</Text>
+			</Section>
+		</>
 	)
 }
