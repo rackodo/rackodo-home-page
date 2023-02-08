@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { ChakraProvider } from '@chakra-ui/react'
 import Main from '../layouts/main'
 import theme from '../theme.ts'
+import { Analytics } from '@vercel/analytics/react'
 
 function MyApp({ Component, pageProps }) {
 	return (
@@ -28,6 +29,7 @@ function MyApp({ Component, pageProps }) {
 			</Head>
 			<Main>
 				<Component {...pageProps}/>
+				<Analytics/>
 			</Main>
 		</ChakraProvider>
 	)
