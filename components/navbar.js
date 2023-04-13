@@ -4,7 +4,6 @@ import React from "react";
 import { useRouter } from "next/router";
 import NextLink from 'next/link';
 
-
 export default function Navbar() {
 
   return (
