@@ -4,32 +4,19 @@ import type { StyleFunctionProps } from "@chakra-ui/react"
 const theme = extendTheme ({
 	initialColorMode: 'dark',
 	useSystemColorMode: true,
-		colors: {
-			light: {
-				100: '#172f45',
-				150: '#172f4588',
-				200: '#1b5080',
-				250: '#1b508088',
-				300: '#1e6db3',
-				400: '#1c7ed4',
-				500: '#61b5ff'
-			},
-			dark: {
-				100: '#36abff',
-				150: '#36abff88',
-				200: '#82cbff',
-				250: '#82cbff88',
-				300: '#9ed7ff',
-				400: '#c9e9ff',
-				500: '#e0f2ff'
-			}
-		},
 	components: {
-		Link: {
-			baseStyle: (props: StyleFunctionProps) => ({
-				fontWeight: 'bold',
-				color: props.colorMode === 'light' ? 'light.400' : 'dark.200'
-			})
+		NavLink: {
+			variants: {
+				inactive: {
+
+				},
+				active: {
+
+				}
+			},
+			defaultProps: {
+				variant: 'inactive'
+			}
 		},
 		Button: {
 			baseStyle: {
