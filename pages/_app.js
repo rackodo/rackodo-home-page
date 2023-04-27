@@ -1,12 +1,12 @@
 import Head from 'next/head'
 import { ChakraProvider } from '@chakra-ui/react'
 import Main from '../layouts/main'
-import theme from '../theme.ts'
+import { styles } from '../styles/globals.css'
 import { Analytics } from '@vercel/analytics/react'
 
 function MyApp({ Component, pageProps }) {
 	return (
-		<ChakraProvider theme={theme}>
+		<ChakraProvider>
 			<Head>
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				{/* Primary Meta Tags */}
