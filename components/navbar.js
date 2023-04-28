@@ -11,7 +11,7 @@ export default function Navbar() {
 	return (
 		<HStack
 		bg="red.100"
-		h={50}
+		h="50px"
 		alignItems="center"
 		justifyContent="center"
 		gap="0px"

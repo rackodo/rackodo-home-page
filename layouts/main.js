@@ -9,9 +9,9 @@ export default function Main({ children }) {
 	const { asPath } = useRouter();
 
 	return(
-		<>
+		<div>
 			<Navbar />
 			{children}
-		</>
+		</div>
 	)
 }
