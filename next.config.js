@@ -5,7 +5,8 @@ const nextConfig = {
 		domains: [
 			'via.placeholder.com'
 		]
-	}
+	},
+	allowImportingTsExtensions: true
 }
 
 module.exports = nextConfig
