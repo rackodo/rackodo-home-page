@@ -10,7 +10,11 @@ export default function Navbar() {
 
 	return (
 		<HStack
+		position="fixed"
+		width="100vw"
+		backdropFilter="blur(50px)"
 		h="50px"
+		zIndex="50"
 		fontSize={{base: "14px", md: "initial"}}
 		paddingX={{base: "10px", md: "20px"}}
 	>
