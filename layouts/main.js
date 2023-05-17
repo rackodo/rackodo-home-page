@@ -11,8 +11,7 @@ export default function Main({ children }) {
 			<Navbar />
 			<Box
 			w="100vw"
-			paddingTop="50px"
-			minH="calc(100vh - 50px)">
+			minH="100vh">
 				{children}
 			</Box>
 		</div>

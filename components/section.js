@@ -4,8 +4,9 @@ const Section = (props) => {
 	return(
 		<Box
 		w="100vw"
-		h="calc(100vh - 50px)"
+		h="100vh"
 		p="20px"
+		paddingTop="50px"
 		{...props} >
 			{props.children}
 		</Box>

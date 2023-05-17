@@ -1,10 +1,10 @@
 import React from "react";
 import Section from "../components/section";
 
-export default function Resume() {
+export default function About() {
 	return(
 		<>
-			<Section>Resume Section</Section>
+			<Section>About Section</Section>
 		</>
 	)
 }

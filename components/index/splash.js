@@ -21,10 +21,10 @@ const bg = keyframes`
 
 export default function Splash() {
 	return(
-		<>
+		<Box as={"div"} width="100vw" height="calc(100vh)" display="block" position="relative">
 			<Box
 			width="100%"
-			minH="calc(100vh - 50px)"
+			height="100%"
 			overflow="hidden"
 			position="absolute"
 			zIndex={-1}
@@ -39,9 +39,8 @@ export default function Splash() {
 			zIndex={0}
 			gap="5px"
 			overflowY="hidden"
-			minH={{md: "600px", sm: "100px"}}
+			minH={{md: "100%", sm: "100px"}}
 			h="calc(100vh - 50px)"
-			paddingBottom={{base: "50px", md: "inherit"}}
 			fontSize="xl"
 			overflowX="hidden"
 			placeItems="center" >
@@ -54,9 +53,14 @@ export default function Splash() {
 					<Heading as="h1">Bash Elliott</Heading>
 					<Heading as="h3"fontSize="xl">Website Designer & Developer (They/Them)</Heading>
 					<br/>
-					<Flex gap="10px">
+					<Flex gap="10px" flexWrap="wrap">
+						<Link href="/projects" passHref legacyBehaviour>
+							<Button flex="50%" target="_blank" >
+								Projects
+							</Button>
+						</Link>
 						<Link href="mailto:rackodo.business@gmail.com" passHref legacyBehaviour>
-							<Button flex="80%" target="_blank">
+							<Button flex="50%" target="_blank">
 								Contact Me
 							</Button>
 						</Link>
@@ -98,6 +102,6 @@ export default function Splash() {
 					maxW="300px" />
 				</GridItem>
 			</Grid>
-		</>
+		</Box>
 	)
 }

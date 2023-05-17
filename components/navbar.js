@@ -1,6 +1,7 @@
 import { 
 	Button, 
 	HStack, 
+	IconButton, 
 	Text } from "@chakra-ui/react";
 
 import React from "react";
@@ -10,11 +11,14 @@ import { useRouter } from "next/router";
 import NextLink from 'next/link';
 
 import { 
+	faEnvelope,
+	faFolderOpen,
 	faHome, 
-	faNoteSticky, 
-	faPencil } from "@fortawesome/free-solid-svg-icons";
+	faProjectDiagram, 
+	faUser} from "@fortawesome/free-solid-svg-icons";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faRProject } from "@fortawesome/free-brands-svg-icons";
 
 export default function Navbar() {
 	return (
@@ -25,7 +29,7 @@ export default function Navbar() {
 		h="50px"
 		zIndex="50"
 		fontSize={{base: "14px", md: "initial"}}
-		paddingX={{base: "10px", md: "20px"}}
+		paddingX={{base: "10px", lg: "150px", md: "50px"}}
 	>
 		<HStack flex={{base: "40%", md: "50%"}}>
 			<NextLink href="/" passHref legacyBehavior>
@@ -35,30 +39,36 @@ export default function Navbar() {
 					id="home"
 				/>
 			</NextLink>
-			<NextLink href="/resume" passHref legacyBehavior>
+			<NextLink href="/works" passHref legacyBehavior>
 				<NavLink
-					icon={faPencil}
-					name="Resume"
-					id="resume"
+					icon={faFolderOpen}
+					name="Works"
+					id="works"
 				/>
 			</NextLink>
-			<NextLink href="/portfolio" passHref legacyBehavior>
+			<NextLink href="/about" passHref legacyBehavior>
 				<NavLink
-					icon={faNoteSticky}
-					name="Portfolio"
-					id="portfolio"
+					icon={faUser}
+					name="About"
+					id="about"
+				/>
+			</NextLink>
+			<NextLink href="/projects" passHref legacyBehavior>
+				<NavLink
+					icon={faProjectDiagram}
+					name="Projects"
+					id="projects"
 				/>
 			</NextLink>
 		</HStack>
 		<HStack 
-		flex={{base: "20%", md: "50%"}}
+		flex={{base: "none", sm: "40%"}}
 		justifyContent="right" >
 			<NextLink href="mailto:rackodo.business@gmail.com" passHref legacyBehavior>
-				<Button
+				<IconButton
 					variant="outline"
-				>
-					Contact Me
-				</Button>
+					icon={<FontAwesomeIcon icon={faEnvelope} />}
+				/>
 			</NextLink>
 		</HStack >
 	</HStack >

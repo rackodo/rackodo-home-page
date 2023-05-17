@@ -18,7 +18,7 @@ const Button = defineStyleConfig({
 		},
 		outline: {
 			border: '3px solid',
-
+			bg: 'blue.900',
 			borderColor: 'blue.300',
 			color: 'blue.300',
 			_hover: {
