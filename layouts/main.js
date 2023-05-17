@@ -12,7 +12,7 @@ export default function Main({ children }) {
 			<Box
 			w="100vw"
 			paddingTop="50px"
-			minH="calc(100vh)">
+			minH="calc(100vh - 50px)">
 				{children}
 			</Box>
 		</div>

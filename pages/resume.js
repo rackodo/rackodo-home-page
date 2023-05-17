@@ -1,9 +1,10 @@
 import React from "react";
+import Section from "../components/section";
 
 export default function Resume() {
 	return(
 		<>
-			test2
+			<Section>Resume Section</Section>
 		</>
 	)
 }

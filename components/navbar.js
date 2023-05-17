@@ -1,18 +1,27 @@
-import { Button, HStack, Text } from "@chakra-ui/react";
+import { 
+	Button, 
+	HStack, 
+	Text } from "@chakra-ui/react";
+
 import React from "react";
 
 import { useRouter } from "next/router";
+
 import NextLink from 'next/link';
-import { faHome, faNoteSticky, faPencil } from "@fortawesome/free-solid-svg-icons";
+
+import { 
+	faHome, 
+	faNoteSticky, 
+	faPencil } from "@fortawesome/free-solid-svg-icons";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Navbar() {
-
 	return (
 		<HStack
 		position="fixed"
 		width="100vw"
-		backdropFilter="blur(50px)"
+		backdropFilter="blur(10px)"
 		h="50px"
 		zIndex="50"
 		fontSize={{base: "14px", md: "initial"}}

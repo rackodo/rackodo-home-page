@@ -1,8 +1,17 @@
-import { Box, Button, Container, Flex, Grid, GridItem, Heading, IconButton, Image, keyframes } from "@chakra-ui/react";
-import { useRef, useState, useEffect } from "react";
-import { motion, useAnimate } from 'framer-motion'
+import { 
+	Box, 
+	Button, 
+	Flex, 
+	Grid, 
+	GridItem, 
+	Heading, 
+	IconButton, 
+	Image, 
+	keyframes } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { 
+	faGithub, 
+	faTwitter } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
 
 const bg = keyframes`
@@ -15,7 +24,7 @@ export default function Splash() {
 		<>
 			<Box
 			width="100%"
-			h="calc(100% - 50px)"
+			minH="calc(100vh - 50px)"
 			overflow="hidden"
 			position="absolute"
 			zIndex={-1}
@@ -23,9 +32,8 @@ export default function Splash() {
 			bgSize="200%"
 			animation={`${bg} infinite 10s linear`} />
 			<Grid
-
 			templateColumns={{sm: '52% 48%', base: 'initial'}}
-			templateRows={{sm: 'initial', base: '30% 70%'}}
+			templateRows={{sm: 'initial', base: '50% 50%'}}
 			width="100vw"
 			position="relative"
 			zIndex={0}
@@ -33,6 +41,7 @@ export default function Splash() {
 			overflowY="hidden"
 			minH={{md: "600px", sm: "100px"}}
 			h="calc(100vh - 50px)"
+			paddingBottom={{base: "50px", md: "inherit"}}
 			fontSize="xl"
 			overflowX="hidden"
 			placeItems="center" >
