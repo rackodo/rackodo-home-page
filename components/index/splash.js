@@ -6,31 +6,22 @@ import {
 	GridItem, 
 	Heading, 
 	IconButton, 
-	Image, 
-	keyframes } from "@chakra-ui/react";
+	Image } from "@chakra-ui/react";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import { 
 	faGithub, 
 	faTwitter } from "@fortawesome/free-brands-svg-icons";
+
 import Link from "next/link";
 
-const bg = keyframes`
-	from {background-position: 0% center;}
-	to {background-position: -200% center}
-`
+import GradientBG from "../gradientBG";
 
 export default function Splash() {
 	return(
 		<Box as={"div"} width="100vw" height="calc(100vh)" display="block" position="relative">
-			<Box
-			width="100%"
-			height="100%"
-			overflow="hidden"
-			position="absolute"
-			zIndex={-1}
-			bg="linear-gradient(to right, rgb(26, 54, 93), rgb(44, 82, 130), rgb(26, 54, 93))"
-			bgSize="200%"
-			animation={`${bg} infinite 10s linear`} />
+			<GradientBG />
 			<Grid
 			templateColumns={{sm: '52% 48%', base: 'initial'}}
 			templateRows={{sm: 'initial', base: '50% 50%'}}
@@ -83,7 +74,7 @@ export default function Splash() {
 					</Flex>
 				</GridItem>
 				<GridItem
-				padding="50px"
+				padding={{base: "50px", sm: "20px"}}
 				paddingTop={{base: "200px", sm: "50px"}}
 				display="flex"
 				alignItems="center"
@@ -92,14 +83,14 @@ export default function Splash() {
 					<Image
 					display="block"
 					position="relative"
-					borderRadius="100%"
+					borderRadius="53% 47% 34% 66% / 56% 30% 70% 44% "
 					src="profile.png"
 					fallbackSrc="http://via.placeholder.com/300"
 					alt="placeholder"
 					objectFit="contain"
-					boxSize={{base: "75%", sm: "100%"}}
-					maxH="300px"
-					maxW="300px" />
+					boxSize="100%"
+					maxH="400px"
+					maxW="400px" />
 				</GridItem>
 			</Grid>
 		</Box>
