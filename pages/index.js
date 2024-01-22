@@ -1,36 +1,20 @@
-import React from "react";
-import Callout from "../components/callout";
-import ProfileCard from "../components/profilecard";
-import Section from "../components/section";
-import { Button, Container, Link, useColorMode } from "@chakra-ui/react";
-import { H1 } from "../components/headings";
-import { ParaSection } from "../components/section";
-import { ChevronRightIcon } from "@chakra-ui/icons";
-import { useRouter } from "next/router";
+import Head from "next/head";
+import Image from "next/image";
+import { Source_Code_Pro, VT323 } from "next/font/google";
+import styles from "@/styles/Home.module.css";
+import { Box, Flex, Heading, Text } from "@chakra-ui/layout";
+
+const scp = VT323({ subsets: ["latin"], weight: '400' });
 
 export default function Home() {
-	const router = useRouter()
-
-	return(
-		<>
-			<ProfileCard />
-			<Callout>Hi, I&apos;m a frontend web developer based in Australia!</Callout>
-			<Section>
-				<H1>About</H1>
-				<ParaSection>
-					Bash is a soon-to-be high school graduate with a passion for computing, robotics, software development and website design. They&apos;ve tried their hand at a variety of challenges in the programming field, including game development and app development, and even practices some sys-admin knowledge with their two servers at home. When not online, they enjoy watching films and exploring their neighbourhood.
-				</ParaSection>
-				<ParaSection>
-					Bash also practices creative writing in their spare time and occasionally makes videos for their YouTube channel <Link href="https://www.youtube.com/channel/UChiRebGN9a1oSoG_QZj6LjQ" isExternal>Rackodo</Link>. They also enjoy playing guitar recreationally.
-				</ParaSection>
-				<Container p={0} textAlign="center">
-					<Button
-					rightIcon={<ChevronRightIcon/>}
-					onClick={() => router.push('/portfolio')} >
-						My portfolio
-					</Button>
-				</Container>
-			</Section>
-		</>
-	)
+	return (
+		<Flex bg="black" w="100dvw" h="100dvh" p="20px" flexDirection="column" gap="20px">
+			<Box border="1px solid red" p="20px">
+				<Heading className={scp.className} fontFamily={scp.style} color="red.300">Bash Elliott</Heading>
+			</Box>
+			<Box border="1px solid red" flex="auto" alignItems="center" justifyContent="center" display="flex">
+				<Text fontSize="1.5rem" className={scp.className} fontFamily={scp.style} color="red.300">WIP. Check back later.</Text>
+			</Box>
+		</Flex>
+	);
 }
