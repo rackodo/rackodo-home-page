@@ -1,4 +1,4 @@
-import HeaderButton from "@/components/HeaderButton";
+import HeaderButton from "../components/HeaderButton";
 import { Box, Flex, IconButton, ListIcon, Text } from "@chakra-ui/react";
 import { faGithub, faInstagram } from "@fortawesome/free-brands-svg-icons";
 

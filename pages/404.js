@@ -1,12 +1,10 @@
 import { Flex, Grid, Heading } from "@chakra-ui/react";
+import SectionHeading from "../components/SectionHeading";
 
 export default function FourOhFour() {
 	return(
-		<Flex
-		h="calc(100vh / 2)"
-		alignItems="center"
-		justifyContent="center">
-			<Heading size="xl" fontFamily="VT323" fontStyle="italic">Are you snooping around?</Heading>
-		</Flex>
+		<>
+			<SectionHeading>404: Page Not Found</SectionHeading>
+		</>
 	)
 }
