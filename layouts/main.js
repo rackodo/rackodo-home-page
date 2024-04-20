@@ -1,20 +1,44 @@
-import { Box, Divider, Flex, Grid, } from "@chakra-ui/react"
-import ProfileBanner from "../components/ProfileBanner"
+import HeaderButton from "@/components/HeaderButton";
+import { Box, Flex, IconButton, ListIcon, Text } from "@chakra-ui/react";
+import { faGithub, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
-export default function Main({ children }) {
+export default function Main( {children }) {
 	return(
-		<Box
-			backgroundColor='hsl(286, 12%, 21%)'>
-			<Box
-			w="100dvw"
-			minH="100dvh"
-			backgroundColor='hsl(286, 12%, 21%)' >
-				<ProfileBanner boxShadow="0px 0px 15px black" position="sticky" padding="10px" marginBottom="10px" top="0"/>
-				<Box display="block" width="100%" wordBreak="break-word"
-				maxW="600px" margin="auto" padding="20px">
-					<Box>{children}</Box>
+		<Flex 
+		bg="black" 
+		w="100dvw" 
+		h="100dvh" 
+		p="10px" 
+		gap="10px" 
+		flexDirection="column" 
+		>
+			<Flex gap="10px">
+				<Box
+				border="1px solid" 
+				borderColor="blue.300" 
+				p="10px" 
+				flex="100%" 
+				justifyContent="center"
+				>
+					<Text color="blue.200" fontSize="1.5rem" fontWeight="bold">Bash Elliott</Text>
 				</Box>
-			</Box>
-		</Box>
+				<HeaderButton icon={faGithub} href="https://github.com/rackodo"/>
+				<HeaderButton icon={faInstagram} href="https://instagram.com/rackodo/"/>
+			</Flex>
+			<Flex
+			border="1px solid" 
+			borderColor="blue.300" 
+			p="10px" 
+			justifyContent="center" 
+			flex="100%" 
+			color="blue.200" 
+			fontSize="1rem" 
+			alignItems="center"
+			>
+				<Box>
+					{children}
+				</Box>
+			</Flex>
+		</Flex>
 	)
 }
