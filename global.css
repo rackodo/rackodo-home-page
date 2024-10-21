@@ -18,17 +18,22 @@ body {
 	height: 100dvh;
 }
 
-.body-wrapper div {
-	border: 5px solid red;
+.content {
+	border: 5px solid rgb(0, 153, 255);
 	padding: 10px;
+	font-family: "Reddit Mono", monospace;
+	flex: auto;
 }
 
 .header {
 	font-family: "VT323", monospace;
 	font-size: 3rem;
+	display: flex;
+	gap: 10px;
 }
 
-.content {
-	font-family: "Reddit Mono", monospace;
+.header > div {
+	border: 5px solid rgb(0, 153, 255);
+	padding: 10px;
 	flex: auto;
 }
