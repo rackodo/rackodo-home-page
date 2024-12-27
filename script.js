@@ -1,36 +1,38 @@
 const trailer = document.getElementById("trailer");
 const hero = document.getElementById("hero");
 
-let heroR = hero.getBoundingClientRect()
-
-document.onload = (e) => {
-	trailer.style.top = heroR.top;
-	trailer.style.left = heroR.left;
-}
-
+// Move the trailer element based on mouse movement
 window.onmousemove = e => {
-	const x = e.clientX - trailer.offsetWidth / 2,
-		y = e.clientY - trailer.offsetHeight / 2;
+	const x = e.clientX - trailer.offsetWidth / 2;
+	const y = e.clientY - trailer.offsetHeight / 2;
 
-	const keyframes = {
+	trailer.animate({
 		top: `${y}px`,
 		left: `${x}px`
-	}
-
-	trailer.animate(keyframes, {
+	}, {
 		duration: 1000,
 		fill: "forwards"
 	});
-}
+};
 
-// Add event listeners to all 'a' elements in the document
-document.querySelectorAll('a').forEach(anchor => {
-    anchor.addEventListener('mouseover', () => {
-        // Apply styles or add a class to #trailer
-        trailer.classList.add('hovered');
-    });
-    anchor.addEventListener('mouseout', () => {
-        // Remove styles or class from #trailer
-        trailer.classList.remove('hovered');
-    });
+// Function to add hover effect to elements
+const addHoverEffect = (element) => {
+	element.addEventListener('mouseover', () => trailer.classList.add('hovered'));
+	element.addEventListener('mouseout', () => trailer.classList.remove('hovered'));
+};
+
+// Add hover effect to all 'a' and 'button' elements
+document.querySelectorAll('a, button').forEach(addHoverEffect);
+
+const readMore = document.getElementById("readMore");
+const statsSection = document.getElementById("statsSection");
+
+// Show or hide the "Read More" button based on scroll position
+window.addEventListener("scroll", () => {
+	readMore.style.display = window.scrollY > 100 ? "none" : "block";
+});
+
+// Smooth scroll to the stats section when "Read More" button is clicked
+readMore.addEventListener("click", () => {
+	statsSection.scrollIntoView({ behavior: "smooth" });
 });
