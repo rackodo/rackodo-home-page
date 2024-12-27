@@ -21,6 +21,9 @@
 
 body {
 	background-color: var(--background);
+	background-image: url(raccoon_pattern.svg);
+	background-size: 100px;
+	animation: pan 20s infinite linear;
 	color: var(--text);
 	font-family: 'Heebo';
 	font-weight: 400;
@@ -37,10 +40,6 @@ h1, h2, h3, h4, h5 {
 }
 
 .container {
-	background-image: url(raccoon_pattern.svg);
-	background-size: 100px;
-	animation: pan 20s infinite linear;
-
 	height: 100dvh;
 
 	display: flex;
@@ -108,4 +107,33 @@ h1, h2, h3, h4, h5 {
 	.headerText {
 		text-align: center;
 	}
+}
+
+#trailer {
+	width: 200px;
+	height: 200px;
+	/* background-color: white; */
+	border-radius: 100%;
+
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: -1;
+
+	pointer-events: none;
+	opacity: 0;
+	transition-property: opacity, scale;
+	transition-duration: 500ms;
+	transition-timing-function: ease;
+
+	backdrop-filter: invert() hue-rotate(180deg);
+	/* filter: blur(50px); */
+}
+
+body:hover > #trailer {
+	opacity: 1;
+}
+
+#trailer.hovered {
+	scale: 0;
 }
