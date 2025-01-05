@@ -1,14 +1,7 @@
 const trailer = document.getElementById("trailer");
-const hero = document.getElementById("hero");
+const doubleHero = document.querySelector(".doubleHero");
 
-let heroR = hero.getBoundingClientRect()
-
-document.onload = (e) => {
-	trailer.style.top = heroR.top;
-	trailer.style.left = heroR.left;
-}
-
-window.onmousemove = e => {
+function updateTrailerPosition(e) {
 	const x = e.clientX - trailer.offsetWidth / 2,
 		y = e.clientY - trailer.offsetHeight / 2;
 
@@ -23,14 +16,19 @@ window.onmousemove = e => {
 	});
 }
 
+
+window.onmousemove = e => updateTrailerPosition(e);
+
 // Add event listeners to all 'a' elements in the document
 document.querySelectorAll('a').forEach(anchor => {
     anchor.addEventListener('mouseover', () => {
         // Apply styles or add a class to #trailer
         trailer.classList.add('hovered');
+        doubleHero.classList.add('hovered');
     });
     anchor.addEventListener('mouseout', () => {
         // Remove styles or class from #trailer
         trailer.classList.remove('hovered');
+        doubleHero.classList.remove('hovered');
     });
 });
