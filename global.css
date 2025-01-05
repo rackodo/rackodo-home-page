@@ -1,18 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto%20Mono:700|Heebo:400');
 
-@font-face {
-	font-family: 'FiraCodeMono';
-	src: url('FiraCodeNerdFontMono-Regular.ttf');
-}
-
-/* Reset margin and set box-sizing to border-box for all elements */
 * { 
 	margin: 0; 
-	box-sizing: border-box;
 	/* outline: 1px dotted magenta; */
 }
 
-/* Define CSS variables for colors */
 :root {
 	--text: #e4e7fe;
 	--background: #333756;
@@ -22,60 +14,42 @@
 	--pattern: #4B5078;
 }
 
-/* Keyframes for background animation */
 @keyframes pan {
 	from { background-position: 0% 0%;}
 	to { background-position: 200px -100px;}
 }
 
-/* Body styles */
 body {
 	background-color: var(--background);
-	background-image: url(raccoon_pattern.png);
+	background-image: url(raccoon_pattern.svg);
 	background-size: 100px;
 	animation: pan 20s infinite linear;
 	color: var(--text);
 	font-family: 'Heebo';
 	font-weight: 400;
+
+	/* padding: 20px 0px; */
 	height: 100dvh;
 	box-sizing: border-box;
 }
 
-/* Heading styles */
+
 h1, h2, h3, h4, h5 {
-	font-family: 'Roboto Mono';
-	font-weight: 700;
-	text-transform: lowercase; /* Make all headings lowercase */
+  font-family: 'Roboto Mono';
+  font-weight: 700;
 }
 
-.content h1 {
-	position: relative;
-	margin-bottom: 15px;
-}
+.container {
+	height: 100dvh;
 
-.content h1::after {
-	content: '';
-	position: absolute;
-	left: 0;
-	bottom: -10px;
-	width: 100%;
-	height: 3px;
-	background: linear-gradient(to right, var(--primary), transparent);
-}
-
-/* Layout container styles */
-.layout-container {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	z-index: -5;
-	padding-bottom: 50px;
-	border-bottom: 3px solid var(--primary);
 }
 
-/* Layout header styles */
-.layout-header {
+.header {
 	padding: 20px 10%;
+
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -83,27 +57,23 @@ h1, h2, h3, h4, h5 {
 	flex-wrap: wrap;
 	min-height: fit-content;
 	box-sizing: border-box;
-	z-index: 1;
-	height: 100dvh;
 }
 
-/* Image styles in layout header */
-.layout-header img {
+.header img {
 	width: 250px;
 	border-radius: 100%;
 	border: 3px solid var(--pattern);
 }
 
-/* Layout header text styles */
-.layout-header-text {
+.headerText {
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
 }
 
-/* Button styles */
-.btn {
+.button {
 	background-color: var(--background);
+	/* border: 1px solid red; */
 	color: var(--primary);
 	border: 3px solid var(--primary);
 	text-decoration: none;	
@@ -112,34 +82,52 @@ h1, h2, h3, h4, h5 {
 	text-align: center;
 	font-size: 1.2em;
 	transform: translate(0, 0);
-	transition: transform 0.3s, background-color 0.3s, color 0.3s;
+
+	transition-property: transform, background-color, color;
+	transition-duration: 0.3s;
 }
 
-.btn:hover {
+.button:hover {
 	background-color: var(--primary);
 	color: var(--background);
 	transform: translate(0, -3px);
 }
 
-.btn i {
+.button i {
 	vertical-align: -10%;
 	font-size: 24px;
 	padding-right: 5px;
 }
 
-/* Trailer styles */
+@media screen and (max-width: 800px) {
+	.header {
+		flex-direction: column;
+	}
+
+	.headerText {
+		text-align: center;
+	}
+}
+
 #trailer {
 	width: 200px;
 	height: 200px;
+	/* background-color: white; */
 	border-radius: 100%;
+
 	position: fixed;
 	top: 0px;
 	left: 0px;
-	z-index: 0;
+	z-index: -1;
+
 	pointer-events: none;
 	opacity: 0;
-	transition: opacity 500ms, scale 500ms ease;
+	transition-property: opacity, scale;
+	transition-duration: 500ms;
+	transition-timing-function: ease;
+
 	backdrop-filter: invert() hue-rotate(180deg);
+	/* filter: blur(50px); */
 }
 
 body:hover > #trailer {
@@ -148,126 +136,4 @@ body:hover > #trailer {
 
 #trailer.hovered {
 	scale: 0;
-}
-
-/* Content styles */
-.content {
-	width: 100%;
-	min-height: 100vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding: 20px 20%;
-	box-sizing: border-box;
-}
-
-.content-container {
-	width: 100%;
-	max-width: 1200px;
-	margin: 0 auto;
-}
-
-/* Section styles */
-.section {
-	width: 100%;
-	padding: 20px 0;
-}
-
-/* Stats section styles */
-.stats-section {
-	width: 100%;
-	gap: 50px;
-	padding: 20px 0;
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
-	align-items: center;
-}
-
-/* Stats container styles */
-.stats-container {
-	background-color: var(--background);
-	width: 275px;
-	border: 2px solid var(--primary);
-}
-
-.stats-container .topbar {
-	width: 100%;
-	display: flex;
-	border-bottom: 2px solid var(--primary);
-	padding: 5px;
-}
-
-.stats-container .topbar-title {
-	flex: 100%;
-	font-family: 'Roboto Mono';
-}
-
-.stats-container .topbar-buttons {
-	display: flex;
-	align-items: center;
-	gap: 5px;
-}
-
-.stats-container .topbar-button {
-	width: 1.25em;
-	height: 1.25em;
-	aspect-ratio: 1/1;
-	display: block;
-	background-color: var(--primary);
-	border-radius: 100%;
-	flex: none;
-}
-
-/* Stats content styles */
-.stats {
-	padding: 20px 10%;
-	font-family: 'FiraCodeMono';
-}
-
-.stats-footer {
-	padding: 5px;
-	border-top: 2px solid var(--primary);
-	text-align: right;
-	color: var(--primary);
-}
-
-.stats-text {
-	flex: 50%;
-	text-align: justify;
-}
-
-/* Read more button styles */
-.read-more {
-	position: fixed;
-	bottom: 20px;
-	left: 50%;
-	transform: translateX(-50%);
-	padding: 10px 20px;
-	border-radius: 5px;
-	font-size: 1em;
-	text-align: center;
-	transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-	z-index: 1000;
-	text-decoration: none;
-	cursor: pointer;
-}
-
-.read-more:hover {
-	transform: translate(-50%, -3px);
-}
-
-/* Media queries for responsive design */
-@media screen and (max-width: 800px) {
-	.layout-header {
-		flex-direction: column;
-	}
-
-	.layout-header-text {
-		text-align: center;
-	}
-
-	.content {
-		padding: 20px 10%;
-	}
 }
